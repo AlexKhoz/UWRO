@@ -1,0 +1,378 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 120px;
+    z-index: 1000;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.nav-lines-cont {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-line {
+    width: 46px;
+    height: 4px;
+    background: black;
+    border-radius: 2px;
+}
+
+.org-name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.80px;
+    word-wrap: break-word;
+}
+
+
+/* ----------------Main content----------------*/
+.container {
+    width: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url('images/Hero image.png');
+    background-size: cover;
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* or center if you want vertical centering too */
+    z-index: 10;
+}
+
+.hero-content {
+    padding: 200px 0px 200px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 47px;
+    font-family: 'Libre Caslon Display';
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 51.63px;
+    letter-spacing: 0.94px;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    width: 950px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+@media (max-width: 1200px) {
+    .hero-text {
+        width: auto;
+    }
+}
+
+.hero-text span {
+    color: black;
+    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 19.48px;
+    letter-spacing: 0.80px;
+    word-wrap: break-word;
+}
+.hero-text span:last-child {
+    line-height: 22.40px;
+}
+
+.donate-btn {
+    width: 160px;
+    height: 50px;
+    border-radius: 80px;
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    border: none; 
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 50 !important;
+}
+
+.donate-btn:hover {
+    background-color: #C0FF39;
+    z-index: 50 !important;
+}
+
+.donate-btn:active {
+    transform: scale(0.98);
+}
+
+.big-logo-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none;
+    opacity: 1;
+    z-index: -20;
+    overflow: hidden;
+}
+
+.big-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    z-index: -20;
+}
+
+.partners-logos {
+    overflow: hidden; /* Prevents overflow when logos move */
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 20px 0; /* Adjust margins as needed */
+    z-index: 20;
+}
+
+.logo-container {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    animation: none;
+    transition: transform 0.5s ease;
+}
+
+.logo-container img {
+    flex: 1 1 0;
+    width: auto;
+    height: 120px;
+    margin-bottom: 0;
+    object-fit: contain;
+}
+
+@media (max-width: 1200px) {
+    .logo-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .logo-container img {
+        height: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .logo-container img {
+        height: 40px;
+    }
+}
+
+.logo-container.logo-scroll {
+    animation: logoScroll 20s linear infinite;
+}
+
+@keyframes logoScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.about-section {
+    width: 100%;
+    height: auto;
+    margin: 200px 0px 200px 0px;
+    z-index: 200;
+}
+
+@media (max-width: 1200px) {
+    .about-section  {
+        margin: 100px 0px 100px 0px;
+    }
+}
+
+.h3 {
+    text-align: center;
+    color: black;
+    font-size: 44px;
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+    line-height: 48.34px;
+    word-wrap: break-word;
+    margin: 0 auto 24px auto;
+    display: block;
+    margin-bottom: 85px;
+    z-index: 25;
+}
+
+.mission-text {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    color: black;
+    font-size: 78px;
+    font-family: "Libre Caslon Display", serif;;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 78px;
+    letter-spacing: 1.56px;
+    word-wrap: break-word;
+    display: block;
+    z-index: 30;
+}
+
+@media (max-width: 1200px) {
+    .mission-text {
+        font-size: 48px;
+        line-height: 1.1;
+        max-width: 90vw;
+    }
+    .h3 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .mission-text {
+        font-size: 36px;
+        line-height: 1.1;
+        max-width: 98vw;
+    }
+    .h3 {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Sub form css*/
+.subscription-form {
+    max-width: 600px;
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 45px;
+    padding: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    z-index: 35;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="email"],
+input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    padding: 15px 0px 15px 30px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    outline: none;
+    margin: 0 auto;
+    display: block;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus {
+    border-color: #000;
+}
+
+button {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-style: italic;
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    background-color: #000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+button:hover {
+    background-color: #C0FF39;
+}
+
+@media (max-width: 600px) {
+    .subscription-form {
+        max-width: auto;
+    }
+}
+
+/* --------------------------------------------------  */ 
