@@ -35,8 +35,8 @@ header {
 }
 
 .nav-line {
-    width: 46px;
-    height: 4px;
+    width: 32px;    
+    height: 2px;
     background: black;
     border-radius: 2px;
 }
@@ -77,7 +77,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; /* or center if you want vertical centering too */
-    z-index: 10;
 }
 
 .hero-content {
@@ -134,6 +133,9 @@ main {
 }
 
 .donate-btn {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-style: normal;
     width: 160px;
     height: 50px;
     border-radius: 80px;
@@ -144,16 +146,33 @@ main {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
-    z-index: 50 !important;
 }
 
 .donate-btn:hover {
     background-color: #C0FF39;
-    z-index: 50 !important;
+    cursor: none !important; /* Hide original cursor on hover */
+
 }
+
 
 .donate-btn:active {
     transform: scale(0.98);
+}
+
+.big-logo-container-top {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none;
+    opacity: 1;
+    z-index: 2;
+    overflow: hidden;
 }
 
 .big-logo-container {
@@ -168,15 +187,21 @@ main {
     align-items: flex-end;
     pointer-events: none;
     opacity: 1;
-    z-index: -20;
+    z-index: -1;
     overflow: hidden;
+}
+
+.big-logo-top {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .big-logo {
     width: 100%;
     height: auto;
     object-fit: contain;
-    z-index: -20;
+    filter: brightness(0) saturate(100%) invert(82%) sepia(0%) saturate(3608%) hue-rotate(174deg) brightness(103%) contrast(107%);
 }
 
 .partners-logos {
@@ -245,7 +270,7 @@ main {
     width: 100%;
     height: auto;
     margin: 200px 0px 200px 0px;
-    z-index: 200;
+    z-index: 20;
 }
 
 @media (max-width: 1200px) {
@@ -320,13 +345,15 @@ main {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    z-index: 35;
+    margin-bottom: 180px;
+    z-index: 20 !important;
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    z-index: 30;
 }
 
 input[type="email"],
@@ -350,7 +377,7 @@ input[type="text"]:focus {
     border-color: #000;
 }
 
-button {
+.button-amen {
     font-family: 'Inter';
     font-weight: 600;
     font-style: italic;
@@ -365,8 +392,9 @@ button {
     display: block;
 }
 
-button:hover {
+.button-amen:hover {
     background-color: #C0FF39;
+    color: #000;
 }
 
 @media (max-width: 600px) {
@@ -374,5 +402,3 @@ button:hover {
         max-width: auto;
     }
 }
-
-/* --------------------------------------------------  */ 
