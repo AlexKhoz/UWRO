@@ -1,7 +1,7 @@
 // Final Custom Cursor Solution with SVG Loading - Multiple Buttons Support
 function setupCustomCursor() {
     // Select all buttons that should have custom cursor
-    const targetButtons = document.querySelectorAll('.donate-btn, .button-amen');
+    const targetButtons = document.querySelectorAll('.donate-btn, .button-amen, .cardBox, .card');
     
     if (targetButtons.length === 0) {
         console.error('No target buttons found!');
