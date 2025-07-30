@@ -1192,6 +1192,7 @@ button:focus-visible {
 @media (max-width: 768px) {
   .change-lives-give {
       padding: clamp(20px, 5vw, 40px);
+      height: auto;
   }
 
   .form-grid {
