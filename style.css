@@ -109,8 +109,8 @@ main {
   font-family: 'Libre Caslon Display';
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 51.63px;
-  letter-spacing: 0.94px;
+  line-height: 52px;
+  letter-spacing: 1px;
   word-wrap: break-word;
   margin-bottom: 20px;
 }
@@ -128,7 +128,7 @@ main {
   font-size: 16px;
   font-family: 'Inter';
   font-weight: 400;
-  line-height: 19.48px;
+  line-height: 20px;
   letter-spacing: 0.80px;
 }
 
@@ -317,7 +317,7 @@ input[type="text"] {
 }
 
 .input-group input[type="email"],
-input[type="text"]{
+.input-group input[type="text"] {
   height: 60px;
 }
 
@@ -483,132 +483,155 @@ text-align: center;
   flex: 1;
 }
 
-/* Divine Donor Status */
-.frame {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: left;
-  gap: 40px;
-  padding: 60px;
-  position: relative;
-  background-color: #1717d8;
-  border-radius: 35px;
+/* --- Card grid --- */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex: 1 1 400px;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    gap: 25px;
 }
 
-.frame .content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
+.card-box {
+    width: 100%;
+    height: 240px;
+    perspective: 1000px;
+    margin: 0 auto;
+    cursor: none;
 }
 
-.frame .div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  width: 60%;
-  min-width: 0;
+.dd-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    border-radius: 35px;
 }
 
-.frame .divine-div-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-  width: 40%;
+/* Card Sides */
+.card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.divine-div-2 .dd-description,
-.divine-div-2 .dd-quote {
-  padding-bottom: 20px;
+.card-front {
+    background-color: #ffffff;
+    color: #000000;
 }
 
-/* Flip Cards */
-.card-h1 {
-  color: #000000;
-  text-align: center;
-  letter-spacing: 2%;
-  font-family: 'Libre Caslon Display';
-  font-weight: 200;
-  font-size: 32px;
-  line-height: 1.1;
-  margin: 0;
+.card-back {
+    background-color: #C0FF39;
+    color: #000000;
+    transform: rotateY(180deg);
+    text-align: center;
+    border: 3px solid #ffffff;
+    padding: 10px;
+    justify-content: space-evenly;
+    font-size: 14px;
 }
 
-.frame .cardBox {
-  position: relative;
-  width: 360px;
-  height: 340px;
-  perspective: 1000px;
-  cursor: none !important;
+.card-box:hover .dd-card {
+    transform: rotateY(180deg);
 }
 
-.frame .card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.7s;
-  transform-style: preserve-3d;
-  border-radius: 35px;
+/* Card Typography */
+.card-title {
+    font-family: 'Libre Caslon Display';
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
-.frame .card-side {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+.card-emoji {
+    font-size: 3.5rem;
+    margin: 0 0 10px;
+    line-height: 1;
 }
 
-.frame .card-front {
-  background-color: #ffffff;
-  color: #000000;
+.card-price {
+    display: block;
+    font-size: 15px;
 }
 
-.frame .card-back {
-  background-color: #C0FF39;
-  color: #000000;
-  transform: rotateY(180deg);
-  text-align: center;
-  border: 3px solid #ffffff;
-  padding: 30px;
-  justify-content: space-evenly;
+.back-text {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
 }
 
-.frame .cardBox:hover .card {
-  transform: rotateY(180deg);
+.back-text b {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
-.frame .span {
-  letter-spacing: 0.19px;
-  display: block;
+.back-text i {
+    font-style: italic;
+    font-size: 0.9em;
 }
 
-.frame .text-wrapper-3 {
-  position: relative;
-  font-family: 'Inter';
-  font-weight: 400;
-  color: #000000;
-  font-size: clamp(2.5rem, 6vw, 6.25rem);
-  text-align: center;
-  letter-spacing: 2.00px;
-  line-height: 1.08;
-  white-space: nowrap;
-  margin-bottom: 20px;
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .cards-grid {
+        max-width: 900px;
+        gap: 25px;
+    }
+    
+    .card-box {
+        height: 260px;
+    }
 }
 
-.frame .back-text {
-  margin: 0px;
-  font-family: 'Inter';
-  font-weight: 400;
-  font-size: 15px;
-  text-align: center;
-  white-space: pre-line;
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 600px;
+        gap: 20px;
+    }
+    
+    .card-box {
+        height: 250px;
+    }
+    
+    .card-side {
+        padding: 15px;
+    }
+    
+    .card-emoji {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .card-title {
+        font-size: 16px;
+    }
+    
+    .card-price {
+        font-size: 14px;
+    }
+    
+    .back-text {
+        font-size: 12px;
+    }
 }
 
 /* Quote Section */
@@ -855,21 +878,7 @@ text-align: center;
 }
 
 @media (max-width: 768px) {
-  .frame .content {
-      flex-direction: column;
-  }
-  .frame .div {
-      width: 100%;
-      padding-bottom: 40px;
-  }
-  .frame .divine-div-2 {
-      width: 100%;
-  }
-  .frame .cardBox {
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto;
-  }
+
   .contacts {
       flex-direction: column;
       padding: 30px 20px;
@@ -1163,14 +1172,7 @@ button:focus-visible {
   background-color: #333333;
   transform: translateY(-1px);
 }
-/*
-.god-bless-you {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: clamp(14px, 2.5vw, 16px);
-  letter-spacing: -0.64px;
-  color: #ffffff;
-}*/
+
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
