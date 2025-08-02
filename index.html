@@ -432,8 +432,16 @@
                   <!-- Frequency Selection -->
                   <div class="input-group">
                     <p class="enter-your-email">Select Frequency</p>
-                    <div class="frequency-button"><div>Monthly</div></div>
-                    <div class="frequency-button"><div>One Time</div></div>
+                    <div class="frequency-radio-group">
+                      <label class="frequency-radio">
+                        <input type="radio" name="frequency" value="monthly" checked>
+                        <span class="frequency-button">Monthly</span>
+                      </label>
+                      <label class="frequency-radio">
+                        <input type="radio" name="frequency" value="onetime">
+                        <span class="frequency-button">One Time</span>
+                      </label>
+                    </div>
                   </div>
             
                   <!-- Card Section -->
@@ -465,7 +473,7 @@
                       <div class="amount-button"><div>$500</div></div>
                       <div class="amount-button"><div>$5000</div></div>
                     </div>
-                    <div class="custom-amount"><div>Type Your Amount</div></div>
+                    <input type="amount" placeholder="Type Your Amount" required aria-label="Type Your Amount">
                   </div>
                 </div>
                 <div class="button-amen">God Bless You!</div>
