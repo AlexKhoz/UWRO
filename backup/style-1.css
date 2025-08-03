@@ -132,6 +132,12 @@ main {
   letter-spacing: 0.80px;
 }
 
+.change-lives-give .hero-text {
+  color: white;
+  width: auto;
+  margin-bottom: 0px;
+}
+
 .donate-btn {
   font-family: 'Inter';
   font-weight: 600;
@@ -260,6 +266,11 @@ main {
   z-index: 25;
 }
 
+.change-lives-give .h3 {
+  margin: 0 auto 30px auto;
+  color: white;
+}
+
 .mission-text {
   width: 100%;
   max-width: 1100px;
@@ -280,6 +291,7 @@ main {
 /* Updates Section */
 .updates-section {
   z-index: 20;
+  padding: 0px 20px;
 }
 
 .subscription-form {
@@ -302,7 +314,8 @@ main {
 }
 
 input[type="email"],
-input[type="text"] {
+input[type="text"],
+input[type="amount"] {
   width: 100%;
   font-family: 'Inter';
   font-weight: 600;
@@ -317,12 +330,14 @@ input[type="text"] {
 }
 
 .input-group input[type="email"],
-.input-group input[type="text"] {
+.input-group input[type="text"],
+.input-group input[type="amount"] {
   height: 60px;
 }
 
 input[type="email"]:focus,
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="amount"]:focus {
   border-color: #000;
 }
 
@@ -485,136 +500,142 @@ text-align: center;
 
 /* --- Card grid --- */
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 80px;
-            flex: 1 1 60%;
-            min-width: 0;
-            max-width: 600px;
-        }
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex: 1 1 400px;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    gap: 25px;
+}
 
-        .card-box {
-            position: relative;
-            width: 100%;
-            max-width: 240px;
-            height: 240px;
-            perspective: 1000px;
-            cursor: none;
-            align-items: stretch;
-        }
+.card-box {
+    width: 100%;
+    height: 240px;
+    perspective: 1000px;
+    margin: 0 auto;
+    cursor: none;
+}
 
-        .dd-card {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.7s;
-            transform-style: preserve-3d;
-            border-radius: 35px;
-            min-height: 260px;
-            flex: none;
-        }
+.dd-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    border-radius: 35px;
+}
 
-        /* Card Sides */
-        .card-side {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 35px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            margin: 0;
-            font-size: 32px;
-            line-height: 1.1;
-        }
+/* Card Sides */
+.card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-        .card-front {
-            background-color: #ffffff;
-            color: #000000;
-        }
+.card-front {
+    background-color: #ffffff;
+    color: #000000;
+}
 
-        .card-back {
-            background-color: #C0FF39;
-            color: #000000;
-            transform: rotateY(180deg);
-            text-align: center;
-            border: 3px solid #ffffff;
-            padding: 20px;
-            justify-content: space-evenly;
-            font-size: 15px;
-        }
+.card-back {
+    background-color: #C0FF39;
+    color: #000000;
+    transform: rotateY(180deg);
+    text-align: center;
+    border: 3px solid #ffffff;
+    padding: 10px;
+    justify-content: space-evenly;
+    font-size: 14px;
+}
 
-        .card-box:hover .dd-card {
-            transform: rotateY(180deg);
-        }
+.card-box:hover .dd-card {
+    transform: rotateY(180deg);
+}
 
-        /* Card Typography */
-        .card-title {
-            font-family: 'Libre Caslon Display';
-            font-weight: 200;
-            font-size: clamp(18px, 3vw, 24px);
-            line-height: 1.1;
-            margin: 0;
-            text-align: center;
-            letter-spacing: 2%;
-        }
+/* Card Typography */
+.card-title {
+    font-family: 'Libre Caslon Display';
+    font-size: clamp(12px, 2.5vw, 15px);
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
 
-        .card-emoji {
-            font-family: 'Inter';
-            font-weight: 400;
-            color: #000000;
-            font-size: clamp(2rem, 4vw, 3rem);
-            text-align: center;
-            letter-spacing: 2.00px;
-            line-height: 1.08;
-            white-space: nowrap;
-            margin-bottom: 15px;
-        }
+.card-emoji {
+    font-size: 3.5rem;
+    margin: 0 0 10px;
+    line-height: 1;
+}
 
-        .card-price {
-            display: block;
-            letter-spacing: 0.19px;
-        }
+.back-text {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+}
 
-        .back-text {
-            margin: 0px;
-            font-family: 'Inter';
-            font-weight: 400;
-            font-size: clamp(11px, 2vw, 13px);
-            text-align: center;
-            white-space: pre-line;
-        }
+.back-text b {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 1200px) {
-            .cards-grid {
-                flex: 1 1 100%;
-                max-width: none;
-                justify-items: center;
-            }
-          
-        }
+.back-text i {
+    font-style: italic;
+    font-size: 0.9em;
+}
 
-        @media (max-width: 768px) {
-           .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .card-box {
-                max-width: 320px;
-                height: 280px;
-                justify-self: center;
-            }
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .cards-grid {
+        max-width: 900px;
+        gap: 25px;
+    }
+    
+    .card-box {
+        height: 260px;
+    }
+}
 
-            .dd-card {
-                min-height: 280px;
-            }
-        }
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 600px;
+        gap: 20px;
+    }
+    
+    .card-box {
+        height: 250px;
+    }
+    
+    .card-side {
+        padding: 15px;
+    }
+    
+    .card-emoji {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .back-text {
+        font-size: 12px;
+    }
+}
 
 /* Quote Section */
 .quote-section {
@@ -636,7 +657,7 @@ text-align: center;
   font-style: italic;
   font-family: 'Inter';
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 20px;
@@ -928,32 +949,13 @@ text-align: center;
   outline-offset: 2px;
 }
 
-/* Utility Classes */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+/*--------  Donate section --------*/
 
-/* ---------------------------------------------------------- */
-
-/*---- Donate section ----*/
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
-}
-
-/* Main Section */
 .change-lives-give {
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: auto;
+  padding: 100px 100px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -968,61 +970,35 @@ button:focus-visible {
   max-width: 1200px;
 }
 
-.text-wrapper {
-  font-family: "Libre Caslon Text", serif;
-  font-weight: 400;
-  font-size: clamp(28px, 6vw, 44px);
-  letter-spacing: 0;
-  line-height: 1.2;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-.we-are-committed-to {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: clamp(12px, 2.5vw, 16px);
-  letter-spacing: 0.8px;
-  line-height: 1.5;
-  color: #ffffff;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 /* Form Container */
 .form-container {
   width: 100%;
   max-width: 1200px;
-  padding: clamp(20px, 4vw, 40px);
+  padding: clamp(40px, 40px, 40px);
   background-color: #e8e8e7;
   border-radius: clamp(20px, 5vw, 44px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(20px, 4vw, 40px);
+  gap: clamp(20px, 4vw, 60px);
   width: 100%;
   align-items: start;
 }
 
-.enter-your-email,
-.text-wrapper-2 {
+.enter-your-email {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: clamp(14px, 2.5vw, 16px);
   letter-spacing: -0.64px;
   color: #000000;
-  margin-bottom: 16px;
 }
 
-.input-field,
 .frequency-button,
-.amount-button,
-.custom-amount {
+.amount-button {
   height: clamp(50px, 8vw, 60px);
-  padding: 18px clamp(15px, 3vw, 31px);
+  padding: 18px clamp(15px, 1vw, 31px);
   border-radius: clamp(25px, 10vw, 84px);
   border: 0.5px solid #000000;
   font-family: "Inter", sans-serif;
@@ -1037,11 +1013,6 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.input-field {
-  background-color: #ffffff;
-  margin-bottom: 12px;
 }
 
 .input-group {
@@ -1059,25 +1030,40 @@ button:focus-visible {
   background-color: #ffffff;
 }
 
-.left-column {
+
+/*------------------ REACT COMPONENT START --------------------*/
+
+.carousel-section {
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  grid-column: 1 / -1; /* Spans both columns */
 }
 
-.right-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.carousel-container {
+  position: relative;
+  width: 23rem;
+  height: 15rem;
+  perspective: 500px;
+  transform-style: preserve-3d;
 }
 
-.card-group {
-  display: flex;
-  justify-content: space-between;
-  gap: clamp(15px, 3vw, 20px);
+.card-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
-.card-don {
+.card-wrapper.active {
+  pointer-events: auto;
+}
+
+.card {
   position: relative;
   width: 100%;
   max-width: 180px;
@@ -1092,11 +1078,7 @@ button:focus-visible {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.card-don:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
 }
 
 .card-icon {
@@ -1104,15 +1086,7 @@ button:focus-visible {
   margin-bottom: 10px;
 }
 
-.card-title {
-  font-family: "Libre Caslon Display", serif;
-  font-weight: 400;
-  font-size: clamp(12px, 2.5vw, 15px);
-  letter-spacing: 0.3px;
-  line-height: 1.2;
-  text-align: center;
-  color: #000000;
-}
+/*------------------ REACT COMPONENT END --------------------*/
 
 .amount-buttons {
   display: grid;
@@ -1133,6 +1107,41 @@ button:focus-visible {
 .custom-amount {
   background-color: #ffffff;
   width: 100%;
+}
+
+/* Frequency Radio Group */
+.frequency-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.frequency-radio {
+    flex: 1;
+    position: relative;
+    margin: 0;
+}
+
+.frequency-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.frequency-radio .frequency-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.frequency-radio input[type="radio"]:checked + .frequency-button {
+    background-color: #C0FF39;
+    color: #000000;
 }
 
 /* Submit Button */
@@ -1157,15 +1166,10 @@ button:focus-visible {
 
 
 /* Responsive Adjustments */
-@media (max-width: 992px) {
+@media (max-width: 1000px) {
   .form-grid {
       grid-template-columns: 1fr;
       gap: 30px;
-  }
-
-  .left-column,
-  .right-column {
-      gap: 25px;
   }
 
   .frequency-buttons {
@@ -1176,6 +1180,8 @@ button:focus-visible {
 @media (max-width: 768px) {
   .change-lives-give {
       padding: clamp(20px, 5vw, 40px);
+      padding-top: 60px;
+      padding-block: 60px;
       height: auto;
   }
 
@@ -1230,24 +1236,12 @@ button:focus-visible {
       max-width: 180px;
   }
 
-  .input-field,
   .frequency-button,
   .amount-button,
   .custom-amount,
   .submit-button {
       border-radius: 30px;
       height: 50px;
-  }
-}
-
-/* Extra large screens */
-@media (min-width: 1400px) {
-  .change-lives-give {
-      padding: 80px 100px;
-  }
-
-  .form-container {
-      max-width: 1400px;
   }
 }
 
@@ -1263,3 +1257,4 @@ button:focus-visible {
 .amount-button.active:hover {
   background-color: #C0FF39;
 } 
+

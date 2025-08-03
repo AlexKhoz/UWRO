@@ -203,8 +203,8 @@
                             <div class="card-side card-front">
                                 <div class="card-emoji">🕯️</div>
                                 <p class="card-title">
-                                    <span class="card-price">LIGHT BEARER</span>
-                                    <span class="card-price">$ 1 - $ 99</span>
+                                    LIGHT BEARER <br>
+                                    $ 1 - $ 99
                                 </p>
                             </div>
                             <div class="card-side card-back">
@@ -222,8 +222,8 @@
                             <div class="card-side card-front">
                                 <div class="card-emoji">🛡️</div>
                                 <p class="card-title">
-                                    <span class="card-price">FLAME KEEPER</span>
-                                    <span class="card-price">$ 100 - $ 999</span>
+                                    FLAME KEEPER <br>
+                                    $ 100 - $ 999
                                 </p>
                             </div>
                             <div class="card-side card-back">
@@ -242,8 +242,8 @@
                             <div class="card-side card-front">
                                 <div class="card-emoji">🕊</div>
                                 <p class="card-title">
-                                    <span class="card-price">PILLAR OF HARMONY</span>
-                                    <span class="card-price">$ 1k - $ 10k</span>
+                                    PILLAR OF HARMONY <br>
+                                    $ 1k - $ 10k
                                 </p>
                             </div>
                             <div class="card-side card-back">
@@ -262,8 +262,8 @@
                             <div class="card-side card-front">
                                 <div class="card-emoji">🛕</div>
                                 <p class="card-title">
-                                    <span class="card-price">ARCHITECT OF UNITY</span>
-                                    <span class="card-price">$ 10k - $ 100k</span>
+                                    ARCHITECT OF UNITY <br>
+                                    $ 10k - $ 100k
                                 </p>
                             </div>
                             <div class="card-side card-back">
@@ -285,8 +285,8 @@
                             <div class="card-side card-front">
                                 <div class="card-emoji">🌳</div>
                                 <p class="card-title">
-                                    <span class="card-price">GUARDIAN OF ETERNITY</span>
-                                    <span class="card-price">$ 100k - $ 1M</span>
+                                    GUARDIAN OF ETERNITY <br>
+                                    $ 100k - $ 1M
                                 </p>
                             </div>
                             <div class="card-side card-back">
@@ -307,8 +307,8 @@
                             <div class="card-side card-front">
                                 <div class="card-emoji">👑</div>
                                 <p class="card-title">
-                                    <span class="card-price">ETERNAL FOUNDER</span>
-                                    <span class="card-price">$ 1M+</span>
+                                    ETERNAL FOUNDER <br>
+                                    $ 1M+
                                 </p>
                             </div>
                             <div class="card-side card-back">
@@ -453,20 +453,63 @@
                   </div>
 
                   <!-- Amount Selection -->
-                  <div class="amount-group">
-                    <p class="text-wrapper-2">Select Amount</p>
-                    <div class="amount-buttons">
-                      <div class="amount-button"><div>$5</div></div>
-                      <div class="amount-button"><div>$25</div></div>
-                      <div class="amount-button active"><div>$50</div></div>
-                      <div class="amount-button"><div>$100</div></div>
-                      <div class="amount-button"><div>$300</div></div>
-                      <div class="amount-button"><div>$1000</div></div>
-                      <div class="amount-button"><div>$500</div></div>
-                      <div class="amount-button"><div>$5000</div></div>
+                  <div class="input-group">
+                    <p class="enter-your-email">Select Amount</p>
+                    <div class="frequency-radio-group">
+                        <label class="frequency-radio">
+                          <input type="radio" name="amount" value="$5" checked>
+                          <span class="frequency-button">$5</span>
+                        </label>
+                        <label class="frequency-radio">
+                          <input type="radio" name="amount" value="$25">
+                          <span class="frequency-button">$25</span>
+                        </label>
+                        <label class="frequency-radio">
+                            <input type="radio" name="amount" value="$50">
+                            <span class="frequency-button">$50</span>
+                          </label>
+                          <label class="frequency-radio">
+                            <input type="radio" name="amount" value="$100">
+                            <span class="frequency-button">$100</span>
+                          </label>
+                    </div> 
+                    <div class="frequency-radio-group">
+                          <label class="frequency-radio">
+                            <input type="radio" name="amount" value="$300">
+                            <span class="frequency-button">$300</span>
+                          </label>
+                          <label class="frequency-radio">
+                            <input type="radio" name="amount" value="$500">
+                            <span class="frequency-button">$500</span>
+                          </label>
+                          <label class="frequency-radio">
+                            <input type="radio" name="amount" value="$1000">
+                            <span class="frequency-button">$1000</span>
+                          </label>
+                          <label class="frequency-radio">
+                            <input type="radio" name="amount" value="$5000">
+                            <span class="frequency-button">$5000</span>
+                          </label>
+                      </div>
+                      <label class="frequency-radio">
+                        <input 
+                          type="radio" 
+                          name="amount" 
+                          value="" 
+                          id="customAmountRadio"
+                          onchange="this.nextElementSibling.focus()"
+                        />
+                        <input 
+                          type="text" 
+                          inputmode="numeric"
+                          placeholder="Type Your Amount"
+                          aria-label="Type Your Amount"
+                          id="customAmountInput"
+                          oninput="handleCustomAmount(this)"
+                          onclick="this.form.amount.value=''; document.getElementById('customAmountRadio').checked = true;"
+                        />
+                      </label>
                     </div>
-                    <input type="amount" placeholder="Type Your Amount" required aria-label="Type Your Amount">
-                  </div>
                 </div>
                 <div class="button-amen">God Bless You!</div>
               </div>            
@@ -540,6 +583,7 @@
     <script src="js/big-logo-change.js"></script>
     <script src="js/Cursor.js"></script>
     <script type="text/babel" src="js/card-carousel.jsx"></script>
+    <script src="js/custom-amount.js"></script>
 
 </body>
 </html>
