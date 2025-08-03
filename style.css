@@ -1069,8 +1069,8 @@ text-align: center;
 
 .card {
   position: relative;
-  width: clamp(150px, 20vw, 250px);
-  height: clamp(150px, 20vw, 250px);
+  width: clamp(180px, 15vw, 16vw);
+  height: clamp(150px, 15vw, 16vw);
   border-radius: clamp(15px, 2vw, 25px);
   background-color: #ffffff;
   border: 0.5px solid #000000;
@@ -1091,17 +1091,6 @@ text-align: center;
 .card-icon {
   font-size: clamp(16px, 5vw, 45px);
   margin-bottom: clamp(5px, 1vw, 15px);
-}
-
-.card-title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: clamp(7px, 1.8vw, 14px);
-  letter-spacing: -0.32px;
-  color: #000000;
-  text-align: center;
-  line-height: 1.2;
-  white-space: pre-line;
 }
 
 /*------------------ REACT COMPONENT END --------------------*/
