@@ -8,6 +8,7 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: white;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -259,7 +260,6 @@ main {
   font-size: 44px;
   font-family: "Libre Caslon Text", serif;
   font-weight: 400;
-  line-height: 48.34px;
   word-wrap: break-word;
   margin: 0 auto 85px auto;
   display: block;
@@ -267,7 +267,7 @@ main {
 }
 
 .change-lives-give .h3 {
-  margin: 0 auto 30px auto;
+  margin: 0 auto 20px auto;
   color: white;
 }
 
@@ -369,13 +369,15 @@ text-align: center;
 
 /* Divine Digital Sections */
 .divine-digital-section {
+  min-height: 100vh; /* Each section takes at least full screen */
   width: 100%;
-  display: flex;
-  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .dd-container {
   width: 100%;
+  height: 100vh;
   padding: 60px;
   background: #1818D8;
   border-radius: 35px;
@@ -385,7 +387,10 @@ text-align: center;
 }
 
 .dd-container-white {
+  position: sticky;
+  top: 0;
   width: 100%;
+  height: 100vh;
   padding: 60px;
   background: #FFFFFF;
   border-radius: 35px;
@@ -860,7 +865,7 @@ text-align: center;
   }
   .h3 {
       font-size: 32px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
   }
 }
 
@@ -1035,7 +1040,7 @@ text-align: center;
 
 .carousel-section {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1069,8 +1074,9 @@ text-align: center;
 
 .card {
   position: relative;
-  width: clamp(180px, 15vw, 16vw);
-  height: clamp(150px, 15vw, 16vw);
+  width: clamp(180px, 14vw, 20vw);
+  height: clamp(150px, 11vw, 13vw);
+  flex-grow: 1;
   border-radius: clamp(15px, 2vw, 25px);
   background-color: #ffffff;
   border: 0.5px solid #000000;
@@ -1262,7 +1268,7 @@ width: clamp(20px, 18vh, 120px);
   }
   
   .card-title {
-    font-size: clamp(14px, 1.2vw, 10px);
+    font-size: clamp(18px, 1.2vw, 20px);
   }
 
   .frequency-button,
