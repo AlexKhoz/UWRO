@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>United World Religion Organization</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -412,8 +415,8 @@
             <section class="change-lives-give">
               <!-- Header Section -->
               <div class="header">
-                <h2 class="text-wrapper">Change Lives. Give with Faith.</h2>
-                <p class="we-are-committed-to">
+                <h2 class="h3">Change Lives. Give with Faith.</h2>
+                <p class="hero-text">
                   WE ARE COMMITTED TO FULL TRANSPARENCY: 90% OF ALL FUNDS DIRECTLY SUPPORT OUR CAUSES, WITH ONLY 5%
                   ALLOCATED TO ADMINISTRATION AND 5% TO OUTREACH EFFORTS.
                 </p>
@@ -445,21 +448,10 @@
                   </div>
             
                   <!-- Card Section -->
-                  <div class="card-group">
-                    <div class="card-don">
-                      <div class="card-icon">🛡️</div>
-                      <div class="card-title">FLAME<br />KEEPER</div>
-                    </div>
-                    <div class="card-don">
-                      <div class="card-icon">🕊️</div>
-                      <div class="card-title">LIGHT<br />BEARER</div>
-                    </div>
-                    <div class="card-don">
-                      <div class="card-icon">🛕</div>
-                      <div class="card-title">ARCHITECT<br />OF UNITY</div>
-                    </div>
+                  <div class="carousel-section">
+                    <div id="carousel-root"></div>
                   </div>
-            
+
                   <!-- Amount Selection -->
                   <div class="amount-group">
                     <p class="text-wrapper-2">Select Amount</p>
@@ -544,7 +536,10 @@
             </footer>
         </main>
     </div>
+
     <script src="js/big-logo-change.js"></script>
     <script src="js/Cursor.js"></script>
+    <script type="text/babel" src="js/card-carousel.jsx"></script>
+
 </body>
 </html>
