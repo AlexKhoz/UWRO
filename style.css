@@ -1049,22 +1049,20 @@ text-align: center;
   width: 100%;
   max-width: 100%;
   height: clamp(150px, 25vh, 300px);
-  perspective: 1000px;               /* enables visible translateZ depth */
+  perspective: 1000px;
+  transform-style: preserve-3d;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .card-wrapper {
   position: absolute;
   width: 100%;
   height: 100%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
   left: 50%;
   top: 50%;
   transform-origin: center center;
-  transform-style: preserve-3d;       /* keep 3D for children */
-  transition: transform .5s ease, opacity .5s ease;
-  will-change: transform, opacity;
-  pointer-events: none;               /* enabled for active/visible in JSX */
 }
 
 .card-wrapper.active {
@@ -1076,6 +1074,7 @@ text-align: center;
   width: clamp(180px, 12vw, 14vw);
   height: clamp(180px, 12vw, 14vw);
   aspect-ratio: 1 / 1;
+  flex-grow: 1;
   border-radius: clamp(15px, 2vw, 25px);
   background-color: #ffffff;
   border: 0.5px solid #000000;
@@ -1084,34 +1083,18 @@ text-align: center;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform .3s ease, box-shadow .3s ease;
+  transition: all 0.3s ease;
   margin: 0 auto;
-  transform: translate(-50%, -50%);   /* centers card inside wrapper */
-  box-shadow: 0 8px 24px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.08);
+  transform: translate(-50%, -50%);
 }
 
-.card-wrapper .card { z-index: 1; }
+.card-wrapper .card {
+  z-index: 1;
+}
 
 .card-icon {
   font-size: clamp(20px, 5vw, 55px);
-  line-height: 1;
   margin-bottom: clamp(5px, 1vw, 15px);
-}
-
-.card-title {
-  text-align: center;
-  white-space: pre-line;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-  font-size: clamp(12px, 1.4vw, 16px);
-  line-height: 1.1;
-}
-
-/* Hover polish on the active/front card */
-.card-wrapper.active .card:hover {
-  box-shadow: 0 14px 38px rgba(0,0,0,.12), 0 3px 6px rgba(0,0,0,.10);
-  transform: translate(-50%, -50%) scale(1.03);
 }
 
 /*------------------ REACT COMPONENT END --------------------*/

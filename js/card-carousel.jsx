@@ -9,7 +9,7 @@ const Card = ({ icon, title }) => (
 
 const Carousel = () => {
   const [active, setActive] = useState(1);
-
+  
   const cards = [
     { icon: '🕯️', title: 'LIGHT\nBEARER' },
     { icon: '🛡️', title: 'FLAME\nKEEPER' },
@@ -18,48 +18,48 @@ const Carousel = () => {
     { icon: '🌳', title: 'GUARDIAN\nOF ETERNITY' },
     { icon: '👑', title: 'ETERNAL\nFOUNDER' },
   ];
-
+  
   const count = cards.length;
   const MAX_VISIBILITY = 3;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActive(a => (a + 1) % count);
+      setActive(prev => (prev + 1) % count);
     }, 1500);
+
     return () => clearInterval(interval);
   }, [count]);
 
   return (
     <div className="carousel-container">
       {cards.map((card, i) => {
-        // wrap-around offset (-count/2 ... +count/2)
-        let effectiveOffset = active - i;
-        if (effectiveOffset >  count / 2) effectiveOffset -= count;
-        if (effectiveOffset < -count / 2) effectiveOffset += count;
+        const offset = active - i;
+
+        let effectiveOffset = offset;
+        if (offset > count / 2) effectiveOffset = offset - count;
+        if (offset < -count / 2) effectiveOffset = offset + count;
 
         const absEffOffset = Math.abs(effectiveOffset);
-        const dir = Math.sign(effectiveOffset) || 0;
+        const effDirection = Math.sign(effectiveOffset);
 
-        // depth & motion
-        const rotateY    = -12 * effectiveOffset;     // deg
-        const scale      = 1 - 0.06 * absEffOffset;   // 1, 0.94, 0.88...
-        const translateZ = -80 * absEffOffset;        // px (pairs well w/ perspective)
-        const translateX = dir * -6 * absEffOffset;   // px
-
-        const isVisible   = absEffOffset < MAX_VISIBILITY;
-        const opacity     = isVisible ? 1 : 0;
-        const pointerEvt  = isVisible ? 'auto' : 'none';
+        const rotateY = (effectiveOffset / 3) * 0;
+        const scaleY = 1 + (absEffOffset / 3) * 0;
+        const translateZ = (absEffOffset / 3) * -10;
+        const translateX = effDirection * -5;
+        
+        const isVisible = absEffOffset < MAX_VISIBILITY;
+        const opacity = absEffOffset >= MAX_VISIBILITY ? 0 : 1;
 
         return (
           <div
             key={i}
             className={`card-wrapper ${absEffOffset <= 1 ? 'active' : ''}`}
             style={{
-              transform: `translateZ(${translateZ}px) translateX(${translateX}px) rotateY(${rotateY}deg) scale(${scale})`,
-              opacity,
-              pointerEvents: pointerEvt,
+              transform: `rotateY(${rotateY}deg) scaleY(${scaleY}) translateZ(${translateZ}rem) translateX(${translateX}rem)`,
+              opacity: opacity,
+              display: isVisible ? 'block' : 'none',
             }}
-            onClick={() => setActive(a => (a + 1) % count)}
+            onClick={() => setActive((active + 1) % count)}
           >
             <Card icon={card.icon} title={card.title} />
           </div>
