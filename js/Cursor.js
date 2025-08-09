@@ -7,7 +7,7 @@ function setupCustomCursor() {
     }
     
     // Select all buttons that should have custom cursor
-    const targetButtons = document.querySelectorAll('.donate-btn, .button-amen, .card-box');
+    const targetButtons = document.querySelectorAll('.donate-btn, .button-amen, .card-box, .share-btn');
     
     if (targetButtons.length === 0) {
         console.error('No target buttons found!');
@@ -25,8 +25,8 @@ function setupCustomCursor() {
     style.textContent = `
         .custom-cursor {
             position: fixed;
-            width: 48px;
-            height: 48px;
+            width: 64px;
+            height: 64px;
             pointer-events: none;
             z-index: 999999;        /* Much higher z-index */
             transform: translate(-50%, -50%);
