@@ -27,7 +27,9 @@
                 <div class="hero-content">
                     <h1 class="hero-title">Shared Spirit, Shared Future</h1>
                     <p class="hero-text">To foster mutual respect, peace, and collaboration among global faith communities through dialogue, education, and shared humanitarian action and making religion cool Again.</p>
-                    <button class="donate-btn" type="button">Donate Now</button>                   
+                    <button class="donate-btn" type="button" onclick="document.getElementById('donation-form').scrollIntoView({behavior: 'smooth'});">
+                        Donate Now
+                      </button>                                      
                     <div class="big-logo-container-top">
                         <img src="svg/UWRO short.svg" class="big-logo-top" alt="UWRO Logo">
                     </div>
@@ -79,7 +81,7 @@
                         
                         <div class="dd-text-content">
                             <div class="dd-quote-section">
-                                <h3 class="dd-quote">"The Digital Bridge to Spiritual Eternity"</h3>
+                                <h3 class="dd-quote">The Digital Bridge to Spiritual Eternity</h3>
                                 <p class="dd-description">We bring faith closer, more modern, and more accessible by creating a digital ecosystem for temples, mosques, churches, spiritual centres, and religious organizations around the world — across more than 14 religions.</p>
                             </div>
                             
@@ -119,7 +121,7 @@
                         
                         <div class="dd-text-content">
                             <div class="dd-quote-section">
-                                <h3 class="dd-quote">"Navigation of Memory"</h3>
+                                <h3 class="dd-quote">Navigation of Memory</h3>
                                 <p class="dd-description">We are creating technology that helps people easily find those who are no longer with us and show care for those who forever remain in their hearts, no matter the distance.</p>
                             </div>
                             
@@ -152,7 +154,7 @@
                         
                         <div class="dd-text-content">
                             <div class="dd-quote-section">
-                                <h3 class="dd-quote">"Music That Unites The Heavens"</h3>
+                                <h3 class="dd-quote">Music That Unites The Heavens</h3>
                                 <p class="dd-description">We are creating a new format for interfaith dialogue—through music, emotion, and creativity.</p>
                             </div>
                             
@@ -332,7 +334,7 @@
                         </p>
                         <p class="dd-description">
                             As you give, you rise through our Divine Donor Ranks — each one marking your generosity and your impact.
-                            Every rank comes with its own blessings, recognition, and spiritual perks.
+                            Every rank comes with its own blessings, recognition, and spiritual rewards.
                         </p>
                     </div>
                     
@@ -361,7 +363,7 @@
                         
                         <div class="dd-text-content">
                             <div class="dd-quote-section">
-                                <h3 class="dd-quote">"Text placeholder"</h3>
+                                <h3 class="dd-quote">Text placeholder</h3>
                                 <p class="dd-description">Text placeholder-Text placeholder-Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
                             </div>
                             
@@ -403,8 +405,8 @@
             <section class="quote-section">
                 <div class="hero-content">
                     <blockquote class="quote-title">We are making a meaningful contribution to the religious world in the era of global digitalization. From now on, faith and religion will embody the highest standards of technology and art.</blockquote>
-                    <blockquote class="quote-title">We do not change faith—we strengthen it and make it accessible to everyone</blockquote>
-                    <p class="back-text"><b>Nail Saifutdino</b></p>
+                    <blockquote class="quote-title">We do not change faith—we strengthen it and make it accessible to everyone.</blockquote>
+                    <p class="back-text"><b>Nail Saifutdinov</b></p>
                     <p class="back-text"><i>President of UWRO</i></p>
                 </div>  
             </section>
@@ -412,7 +414,7 @@
 
             <!-- Donate Section -->
 
-            <section class="change-lives-give">
+            <section class="change-lives-give" id="donation-form">
               <!-- Header Section -->
               <div class="header">
                 <h2 class="h3">Change Lives. Give with Faith.</h2>
@@ -437,7 +439,7 @@
                     <p class="enter-your-email">Select Frequency</p>
                     <div class="frequency-radio-group">
                       <label class="frequency-radio">
-                        <input type="radio" name="frequency" value="monthly" checked>
+                        <input type="radio" name="frequency" value="monthly">
                         <span class="frequency-button">Monthly</span>
                       </label>
                       <label class="frequency-radio">
@@ -457,7 +459,7 @@
                     <p class="enter-your-email">Select Amount</p>
                     <div class="frequency-radio-group">
                         <label class="frequency-radio">
-                          <input type="radio" name="amount" value="$5" checked>
+                          <input type="radio" name="amount" value="$5">
                           <span class="frequency-button">$5</span>
                         </label>
                         <label class="frequency-radio">
@@ -575,7 +577,7 @@
             </section>
 
             <section class="footer">
-                <img src="svg/UWRO Full.svg" class="foo-logo" alt="United World Religion Organization Full Logo">  
+                <img src="svg/UWRO Full.svg" class="footer-logo" alt="United World Religion Organization Full Logo">  
             </section>
         </main>
 
