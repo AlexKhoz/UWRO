@@ -14,12 +14,25 @@
 </head>
 <body>
         <header>
+            <span onclick="openNav()">
             <nav class="nav-lines-cont" role="navigation" aria-label="Main navigation">
                 <div class="nav-line"></div>
                 <div class="nav-line"></div>
                 <div class="nav-line"></div>
             </nav>
+            </span>
             <div class="org-name">UNITED WORLD RELIGION ORGANIZATION</div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="svg/x-btn.svg" alt="Close" width="42" height="22"></a>
+                <a href="#">Who We Are</a>
+                <a href="#">Our Causes</a>
+                <a href="#" style="font-size: 20px;">Divine Digital</a>
+                <a href="#" style="font-size: 20px;">Eternal Map</a>
+                <a href="#" style="font-size: 20px;">Faith of Harmony</a>
+                <a href="#" style="font-size: 20px;">Divine Donor Status</a> 
+                <a href="#">President’s Message</a>
+                <a href="#">Donations</a>
+            </div>
         </header>
         
         <main>
@@ -574,10 +587,9 @@
                     </nav>
                     <a href="#" class="privacy-link">PRIVACY POLICY</a>
                 </div>
-            </section>
-
-            <section class="footer">
-                <img src="svg/UWRO Full.svg" class="footer-logo" alt="United World Religion Organization Full Logo">  
+                <div class="footer">
+                <img src="svg/UWRO Full.svg" class="footer-logo" alt="United World Religion Organization Full Logo">    
+                </div>
             </section>
         </main>
 
@@ -586,6 +598,7 @@
     <script src="js/Cursor.js"></script>
     <script type="text/babel" src="js/card-carousel.jsx"></script>
     <script src="js/custom-amount.js"></script>
+    <script src="js/menu-open-anim.js"></script>
     <!--<script src="js/stacking-effect.js"></script>-->
 
 </body>

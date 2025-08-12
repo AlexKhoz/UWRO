@@ -31,11 +31,69 @@ header {
   padding: 0 40px;
 }
 
+
+/* Menu */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 500; 
+  font-family: 'Libre Caslon Text', serif;
+  top: 0;
+  background-color: #C0FF39;
+  text-align: center;
+  overflow-x: hidden;
+  padding-top: 120px; 
+  transition: 0.5s; 
+  display: flex;
+  flex-direction: column; /* stack links vertically */
+  justify-content: flex-start; /* align to top */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+  align-items: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+  color: #63841d;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.sidenav {
+  right: 0;
+}
+
+
+/*-----------------------------------*/
+
 .nav-lines-cont {
+  cursor: pointer;
   position: absolute;
   top: 25px;
   right: 40px;
-  z-index: 1100;
+  z-index: 400;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,6 +120,12 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.80px;
   word-wrap: break-word;
+}
+
+@media (max-width: 1200px) {
+  .org-name{
+    font-size: 12px;
+  }
 }
 
 main {
@@ -378,7 +442,8 @@ text-align: center;
 
 .dd-container {
   width: 100%;
-  padding: 60px 60px 120px 60px;
+  height: 100%;
+  padding: 100px 60px 120px 60px;
   background: #1818D8;
   border-radius: 35px 35px 0 0;
   display: flex;
@@ -390,7 +455,8 @@ text-align: center;
 
 .dd-container-white {
   width: 100%;
-  padding: 60px 60px 120px 60px;
+  height: 100%;
+  padding: 100px 60px 120px 60px;
   background: #FFFFFF;
   border-radius: 35px 35px 0 0;
   display: flex;
@@ -842,11 +908,18 @@ text-align: center;
 
 /* Footer */
 .footer {
+  margin-top: 60px;
   width: 100%;
   height: auto;
   background-color: #fff;
   color: #000;
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .footer{
+    margin-top: 10px;
+  }
 }
 
 .footer-logo {
