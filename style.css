@@ -461,7 +461,7 @@ text-align: center;
 }
 
 .dd-container-white {
-  eight: 100%;
+  height: 100%;
   max-height: none;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -1555,6 +1555,4 @@ width: clamp(20px, 18vh, 120px);
   .tier-card {
     min-height: auto;               /* let cards shrink on phones */
   }
-
-
-
+}
