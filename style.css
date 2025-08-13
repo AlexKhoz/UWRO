@@ -120,6 +120,7 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.80px;
   word-wrap: break-word;
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 1200px) {
