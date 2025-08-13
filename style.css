@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -120,7 +121,6 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.80px;
   word-wrap: break-word;
-  transition: color 0.3s ease;
 }
 
 @media (max-width: 1200px) {
@@ -433,15 +433,21 @@ text-align: center;
 }
 
 /* Divine Digital Sections */
+
 .divine-digital-section {
-  width: 100%;
   position: sticky;
-  position: -webkit-sticky;
   top: 0;
-  min-height: 50vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
 }
 
 .dd-container {
+  height: 100%;
+  max-height: none;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable both-edges;
   width: 100%;
   height: 100%;
   padding: 100px 60px 120px 60px;
@@ -455,6 +461,11 @@ text-align: center;
 }
 
 .dd-container-white {
+  eight: 100%;
+  max-height: none;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable both-edges;
   width: 100%;
   height: 100%;
   padding: 100px 60px 120px 60px;
@@ -949,6 +960,11 @@ text-align: center;
       font-size: 32px;
       margin-bottom: 20px;
   }
+
+  .dd-text-content {
+    min-width: 100%;
+    padding-left: 20px;
+}
 }
 
 @media (max-width: 991px) {
@@ -969,6 +985,11 @@ text-align: center;
 }
 
 @media (max-width: 768px) {
+
+  .dd-container, .dd-container-white {
+    max-height: calc(100svh - 0px);
+    overflow: auto;
+  }
 
   .contacts {
       flex-direction: column;
@@ -1159,8 +1180,8 @@ text-align: center;
 
 .card {
   position: relative;
-  width: clamp(160px, 12vw, 14vw);
-  height: clamp(160px, 12vw, 14vw);
+  width: clamp(160px, 10.5vw, 14vw);
+  height: clamp(160px, 10.5vw, 14vw);
   aspect-ratio: 1 / 1;
   flex-grow: 1;
   border-radius: clamp(15px, 2vw, 25px);
@@ -1534,5 +1555,6 @@ width: clamp(20px, 18vh, 120px);
   .tier-card {
     min-height: auto;               /* let cards shrink on phones */
   }
-}
+
+
 
