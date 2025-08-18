@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>United World Religion Organization</title>
+    
+    
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- OGL UMD (creates window.ogl) -->
+    <script src="https://unpkg.com/ogl@0.0.104/dist/ogl.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.104/dist/ogl.min.js"></script>
+
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,16 +23,12 @@
 </head>
 <body>
         <header>
-            <span onclick="openNav()">
-            <nav class="nav-lines-cont" role="navigation" aria-label="Main navigation">
-                <div class="nav-line"></div>
-                <div class="nav-line"></div>
-                <div class="nav-line"></div>
+            <nav id="nav-icon">
+                <span></span>
+                <span></span>
             </nav>
-            </span>
             <div class="org-name">UNITED WORLD RELIGION ORGANIZATION</div>
             <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="svg/x-btn.svg" alt="Close" width="42" height="22"></a>
                 <a href="#who-we-are">Who We Are</a>
                 <a href="#our-causes">Our Causes</a>
                 <a href="#our-causes" style="font-size: 20px;">Divine Digital</a>
@@ -36,7 +41,7 @@
         </header>
         
         <main>
-            <section class="hero-section">
+            <section class="hero-section" id="root">
                 <div class="hero-content">
                     <h1 class="hero-title">Shared Spirit, Shared Future</h1>
                     <p class="hero-text">To foster mutual respect, peace, and collaboration among global faith communities through dialogue, education, and shared humanitarian action and making religion cool Again.</p>
@@ -89,7 +94,7 @@
                     <h2 class="dd-header">Divine Digital</h2>
                     
                     <div class="dd-content">
-                        <div class="dd-image-placeholder" role="img" aria-label="Digital ecosystem visualization for religious organizations">
+                        <div class="dd-image-placeholder img-1" role="img" aria-label="Digital ecosystem visualization for religious organizations">
                         </div>
                         
                         <div class="dd-text-content">
@@ -129,7 +134,7 @@
                 <div class="dd-container is-white">
                     <h2 class="dd-header">Eternal Map</h2>
                     <div class="dd-content">
-                        <div class="dd-image-placeholder" role="img" aria-label="Cemetery navigation technology visualization">
+                        <div class="dd-image-placeholder img-2" role="img" aria-label="Cemetery navigation technology visualization">
                         </div>
                         
                         <div class="dd-text-content">
@@ -162,7 +167,7 @@
                 <div class="dd-container is-white">
                     <h2 class="dd-header">Faith Of Harmony</h2>
                     <div class="dd-content">
-                        <div class="dd-image-placeholder" role="img" aria-label="Interfaith musical collaboration visualization">
+                        <div class="dd-image-placeholder img-3" role="img" aria-label="Interfaith musical collaboration visualization">
                         </div>
                         
                         <div class="dd-text-content">
@@ -367,11 +372,11 @@
         </div>
     </section>
 
-            <section class="divine-digital-section">
+            <!-- <section class="divine-digital-section">
                 <div class="dd-container is-white">
                     <h2 class="dd-header">What We Did</h2>
                     <div class="dd-content">
-                        <div class="dd-image-placeholder" role="img" aria-label="Interfaith musical collaboration visualization">
+                        <div class="dd-image-placeholder img-4" role="img" aria-label="Interfaith musical collaboration visualization">
                         </div>
                         
                         <div class="dd-text-content">
@@ -412,7 +417,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             
             <section class="quote-section" id="presidents-word">
@@ -567,14 +572,33 @@
                     We Pray With Praymory
                     <span class="logo-placeholder"></span>
                 </div>
-            </section>
+            </section>        
 
             <section class="contacts">
-                <div class="cont-sec">
+                <div class="cont-sec-full">
                     <h2 class="sign-up-for-our">Sign up for our newsletter<br>to receive UWRO updates</h2>
                     <form class="newsletter-form">
                         <input type="text" placeholder="Name" required aria-label="Full name">
                         <button type="submit" class="button-amen">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="social-section-mob">
+                    <h3 class="text-wrapper-3">Follow Us</h3>
+                    <nav class="social-links" aria-label="Social media links">
+                        <a href="#" class="social-link">INSTAGRAM</a>
+                        <a href="#" class="social-link">LINKEDIN</a>
+                        <a href="#" class="social-link">X</a>
+                    </nav>
+                    <a href="#" class="privacy-link">PRIVACY POLICY</a>
+                </div>
+
+                <div class="cont-sec-mob">
+                    <h2 class="sign-up-for-our">Sign up for our newsletter<br>to receive UWRO updates</h2>
+                    <form>
+                        <input type="email" placeholder="Email" required="" aria-label="Email address">
+                        <input type="text" placeholder="Name" required="" aria-label="Full name">
+                        <button type="submit" class="button-amen">Subscribe now</button>
                     </form>
                 </div>
                 
@@ -587,8 +611,10 @@
                     </nav>
                     <a href="#" class="privacy-link">PRIVACY POLICY</a>
                 </div>
+                
                 <div class="footer">
-                <img src="svg/UWRO Full.svg" class="footer-logo" alt="United World Religion Organization Full Logo">    
+                    <img src="svg/UWRO Full.svg" class="footer-logo full" alt="United World Religion Organization Full Logo">    
+                    <img src="svg/Logo-short-mob.svg" class="footer-logo short" alt="United World Religion Organization Short Logo">
                 </div>
             </section>
         </main>
@@ -598,7 +624,8 @@
     <script src="js/Cursor.js"></script>
     <script type="text/babel" src="js/card-carousel.jsx"></script>
     <script src="js/custom-amount.js"></script>
-    <script src="js/menu-open-anim.js"></script>
+    <script src="js/menu-new.js"></script>
+    <!--<script type="text/babel" src="js/LightRays.jsx"></script>-->
     <!--<script src="js/org-name-color-change.js"></script>-->
     <!--<script src="js/stacking-effect.js"></script>-->
 
