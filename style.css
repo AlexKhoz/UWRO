@@ -207,18 +207,28 @@ header {
 .light-rays-container {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   pointer-events: none;
-} 
+  overflow: hidden;
+}
 
+.light-rays-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-  margin-top: 12vh;
-} */
+#light-rays-root {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+}*/
 
 .hero-content {
   padding: 18vh 0vh;
@@ -346,7 +356,7 @@ header {
   filter: brightness(0) saturate(100%) invert(82%) sepia(0%) saturate(3608%) hue-rotate(174deg) brightness(103%) contrast(107%);
 }
 
-/* Partners Logos */
+/* Religions icons */
 .partners-logos {
   overflow: hidden;
   position: relative;
@@ -357,21 +367,34 @@ header {
 }
 
 .logo-container {
-  padding: 0 50px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   animation: none;
   transition: transform 0.5s ease;
 }
 
-.logo-container img {
-  flex: 1 1 0;
-  width: auto;
-  height: 120px;
-  margin-bottom: 0;
+.religion-icon {
+  height: auto;
+  width: 300px;
+  margin: 0px 20px;
+  aspect-ratio: 1/1;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+} 
+
+.religion-icon p {  
+  text-align: center;
+}
+
+.logo-container .religion-icon img {
+  height: 80px;
+  width: 80px;
   object-fit: contain;
 }
 
@@ -516,6 +539,10 @@ text-align: center;
 /* Divine Digital Sections */
 
 .divine-digital-section {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   position: sticky;
   top: 0;
   height: 100dvh;
@@ -1087,12 +1114,6 @@ text-align: center;
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .logo-container {
-      padding: 0 20px;
-  }
-  .logo-container img {
-      height: 80px;
-  }
   .about-section {
       margin: 100px 0;
   }
@@ -1162,12 +1183,6 @@ text-align: center;
 }
 
 @media (max-width: 600px) {
-  .logo-container {
-      padding: 0 5px;
-  }
-  .logo-container img {
-      height: 40px;
-  }
   .mission-text {
       font-size: 36px;
       line-height: 1.1;

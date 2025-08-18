@@ -10,11 +10,14 @@
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- OGL UMD (creates window.ogl) -->
-    <script src="https://unpkg.com/ogl@0.0.104/dist/ogl.min.js"></script>
+    <!-- React (only if you rely on React/ReactDOM globals) -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.104/dist/ogl.min.js"></script>
+    <!-- OGL global -->
+    <script src="https://unpkg.com/ogl@0.0.111/dist/ogl.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +44,8 @@
         </header>
         
         <main>
-            <section class="hero-section" id="root">
+            <section class="hero-section">
+                <div id="light-rays-root">
                 <div class="hero-content">
                     <h1 class="hero-title">Shared Spirit, Shared Future</h1>
                     <p class="hero-text">To foster mutual respect, peace, and collaboration among global faith communities through dialogue, education, and shared humanitarian action and making religion cool Again.</p>
@@ -55,21 +59,58 @@
                         <img src="svg/UWRO short.svg" class="big-logo" alt="UWRO Logo Background">
                     </div>
                 </div>
+                </div>
             </section>
 
             <section class="partners-logos" aria-label="Our Partners">
                 <div class="logo-container logo-scroll">
-                    <img src="logos/Becket-Logo-Transparent-01 1.png" alt="Becket Fund Logo">
-                    <img src="logos/Emblem_of_the_Holy_See_(no_background).svg 1.png" alt="Holy See Emblem">
-                    <img src="logos/united-nations-logo-png_seeklogo-247981 1.png" alt="United Nations Logo">
-                    <img src="logos/Becket-Logo-Transparent-01 1.png" alt="Becket Fund Logo">
-                    <img src="logos/Emblem_of_the_Holy_See_(no_background).svg 1.png" alt="Holy See Emblem">
-                    <!-- Duplicated for seamless scroll -->
-                    <img src="logos/Becket-Logo-Transparent-01 1.png" alt="Becket Fund Logo">
-                    <img src="logos/Emblem_of_the_Holy_See_(no_background).svg 1.png" alt="Holy See Emblem">
-                    <img src="logos/united-nations-logo-png_seeklogo-247981 1.png" alt="United Nations Logo">
-                    <img src="logos/Becket-Logo-Transparent-01 1.png" alt="Becket Fund Logo">
-                    <img src="logos/Emblem_of_the_Holy_See_(no_background).svg 1.png" alt="Holy See Emblem">
+                    <div class="religion-icon"><img src="Religion-icons\Armenian Apostolic Church.svg">
+                    <p class="back-text">Armenian Apostolic Church</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Baha╠ü╩╝i╠ü Faith.svg">
+                    <p class="back-text">Bahá’ís faith</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Buddism.svg">
+                    <p class="back-text">Buddhism</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Catholic Christianity.svg">
+                    <p class="back-text">Catholic Christianity</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Confucianism.svg">
+                    <p class="back-text">Confucianism</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Hinduism.svg">
+                    <p class="back-text">Hinduism</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Islam.svg">
+                    <p class="back-text">Islam</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Jainism.svg">
+                    <p class="back-text">Jainism</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Judaism.svg">
+                    <p class="back-text">Judaism</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Mormonism.svg">
+                    <p class="back-text">Mormonism</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Orthodox Christianity.svg">
+                    <p class="back-text">Orthodox Christianity</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Protestantism.svg">
+                    <p class="back-text">Protestantism</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Shinto.svg">
+                    <p class="back-text">Shinto</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Sikhism.svg">
+                    <p class="back-text">Sikhism</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Yoruba.svg">
+                    <p class="back-text">Yoruba</p></div>
+
+                    <div class="religion-icon"><img src="Religion-icons\Zoroastrianism.svg">
+                    <p class="back-text">Zoroastrianism</p></div>
                 </div>
             </section>
 
@@ -287,7 +328,7 @@
                             </div>
                             <div class="card-side card-back">
                                 <h3 class="card-title">ARCHITECT OF UNITY</h3>
-                                <p class="back-text"><b>Your blessings include</b></p>
+                                <!--<p class="back-text"><b>Your blessings include</b></p>-->
                                 <p class="back-text"><i>All Pillar of Harmony Blessings</i></p>
                                 <p class="back-text">Your Name Etched On A Dedicated</p>
                                 <p class="back-text">Section Of The UWRO Site</p>
@@ -578,7 +619,7 @@
                 <div class="cont-sec-full">
                     <h2 class="sign-up-for-our">Sign up for our newsletter<br>to receive UWRO updates</h2>
                     <form class="newsletter-form">
-                        <input type="text" placeholder="Name" required aria-label="Full name">
+                        <input type="text" placeholder="Email" required aria-label="Email">
                         <button type="submit" class="button-amen">Subscribe</button>
                     </form>
                 </div>
@@ -625,7 +666,7 @@
     <script type="text/babel" src="js/card-carousel.jsx"></script>
     <script src="js/custom-amount.js"></script>
     <script src="js/menu-new.js"></script>
-    <!--<script type="text/babel" src="js/LightRays.jsx"></script>-->
+    <!--<script type="text/babel" src="js/LightRays.jsx" defer></script>-->
     <!--<script src="js/org-name-color-change.js"></script>-->
     <!--<script src="js/stacking-effect.js"></script>-->
 
