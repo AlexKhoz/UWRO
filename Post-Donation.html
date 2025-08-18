@@ -7,6 +7,7 @@
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +44,18 @@
                 
                 
                 <div class="hero-content" style="padding:70px 0px 30px 0px;">
-                    <button class="share-btn" type="button">Share</button>   
+                    <div class="share-btn">
+                        <div class="share-btn__overflow">
+                          <button class="share-btn__roller">Share</button>
+                        </div>
+                        <button class="share-btn__text">Share</button>
+                        <div class="share-btn__brands">
+                          <a href="#" target="_blank" class="share-btn__brand"><i class="fa-brands fa-square-facebook"></i></a>
+                          <a href="#" target="_blank" class="share-btn__brand"><i class="fa-brands fa-square-x-twitter"></i></a>
+                          <a href="#" target="_blank" class="share-btn__brand"><i class="fa-brands fa-linkedin"></i></a>
+                          <a href="#" target="_blank" class="share-btn__brand"><i class="fa-brands fa-square-instagram"></i></a>
+                        </div>
+                      </div>
                 </div>
             </section>
 
@@ -53,9 +65,9 @@
                         and fuels a future of unity and peace.</blockquote>
                     <blockquote class="quote-title">May your kindness echo through eternity.</blockquote>
                     <blockquote class="quote-title">With love,</blockquote>
-                    <p class="back-text"><b>Nail Saifutdino</b></p>
+                    <p class="back-text"><b>Nail Saifutdinov</b></p>
                     <p class="back-text"><i>President of UWRO</i></p>
-                    <img src="images/signature.png">
+                    <img src="svg/signature.svg" width="250px" height="auto">
                 </div>  
             </section>
 
@@ -197,11 +209,30 @@
             </section>
 
             <section class="contacts">
-                <div class="cont-sec">
+                <div class="cont-sec-full">
                     <h2 class="sign-up-for-our">Sign up for our newsletter<br>to receive UWRO updates</h2>
                     <form class="newsletter-form">
-                        <input type="text" placeholder="Name" required aria-label="Full name">
+                        <input type="text" placeholder="Email" required aria-label="Email">
                         <button type="submit" class="button-amen">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="social-section-mob">
+                    <h3 class="text-wrapper-3">Follow Us</h3>
+                    <nav class="social-links" aria-label="Social media links">
+                        <a href="#" class="social-link">INSTAGRAM</a>
+                        <a href="#" class="social-link">LINKEDIN</a>
+                        <a href="#" class="social-link">X</a>
+                    </nav>
+                    <a href="#" class="privacy-link">PRIVACY POLICY</a>
+                </div>
+
+                <div class="cont-sec-mob">
+                    <h2 class="sign-up-for-our">Sign up for our newsletter<br>to receive UWRO updates</h2>
+                    <form>
+                        <input type="email" placeholder="Email" required="" aria-label="Email address">
+                        <input type="text" placeholder="Name" required="" aria-label="Full name">
+                        <button type="submit" class="button-amen">Subscribe now</button>
                     </form>
                 </div>
                 
@@ -214,14 +245,16 @@
                     </nav>
                     <a href="#" class="privacy-link">PRIVACY POLICY</a>
                 </div>
+                
+                <div class="footer">
+                    <img src="svg/UWRO Full.svg" class="footer-logo full" alt="United World Religion Organization Full Logo">    
+                    <img src="svg/Logo-short-mob.svg" class="footer-logo short" alt="United World Religion Organization Short Logo">
+                </div>
             </section>
-
-            <footer class="logo-footer">
-                <img src="svg/UWRO Full.svg" class="footer-logo" alt="United World Religion Organization Full Logo">  
-            </footer>
             
         </main>
     </div>
     <script src="js/Cursor.js"></script>
+    <script src="js/share-btn.js"></script>
 </body>
 </html>
