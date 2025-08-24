@@ -1,11 +1,10 @@
-
 function LightRays(props) {
   const {
       raysOrigin = "top-center",
-      raysColor = "#ffffff",
+      raysColor = "#FF0000",
       raysSpeed = 1,
       lightSpread = 1,
-      rayLength = 2,
+      rayLength = 5,
       pulsating = false,
       fadeDistance = 1.0,
       saturation = 1.0,
@@ -133,7 +132,7 @@ function LightRays(props) {
                   gl_FragColor.rgb *= (1.0 - noiseAmount + noiseAmount * n);
               }
               
-              float brightness = 1.0 - (coord.y / iResolution.y);
+              float brightness = 1.5 - (coord.y / iResolution.y);
               gl_FragColor.x *= 0.1 + brightness * 0.8;
               gl_FragColor.y *= 0.3 + brightness * 0.6;
               gl_FragColor.z *= 0.5 + brightness * 0.5;
@@ -284,7 +283,7 @@ const lightRays1Container = document.getElementById('lightRays1');
 
 let lightRays1Props = {
   raysOrigin: "top-center",
-  raysColor: "#ffffff",
+  raysColor: "#FFD373",
   raysSpeed: 1.5,
   lightSpread: 0.8,
   rayLength: 1.2,
