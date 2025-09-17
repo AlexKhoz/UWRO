@@ -35,12 +35,26 @@
             </section>
 
             <section class="big-card">
-                <div class="hero-content" style="padding:70px 0px 20px 0px;">
+                <div class="hero-content" style="padding:10px 0px 20px 0px;">
                     <p class="hero-text"> You’ve just unlocked your divine donor status:</p>
                 </div>
-                <div class="big-card-element">                   
-                    <button class="donate-btn" type="button">Click to Reveal</button>
-                </div>
+
+
+                    <div class="big-card-element">
+                        <div class="big-card-inner">
+                            <div class="big-card-front">
+                                <button class="donate-btn" type="button">Click to Reveal</button>
+                            </div>
+                            <div class="big-card-back">
+                                    <div class="back-content">
+                                    <div class="card-emoji">🕯️</div>
+                                    <h3 class="card-title">DEAR LIGHT BEARER, YOUR SPIRITUAL SWAG IS ON THE WAY...</h3>
+                                    <p class="back-text">Your blessings include: A heartfelt thank-you email Your name proudly displayed on the UWRO Gratitude Wall</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
                 
                 
                 <div class="hero-content" style="padding:70px 0px 30px 0px;">
@@ -72,7 +86,7 @@
             </section>
 
             <section>
-                <div class="hero-content" style="padding:180px 0px 20px 0px;">
+                <div class="hero-content" style="padding:40px 0px 20px 0px;">
                     <h1 class="hero-title" style="text-transform: none;">Unlock Your Divine Destiny by Donating</h1>
                     <p class="hero-text">Each donation lights the way to something greater</p>
                 </div>
@@ -169,44 +183,50 @@
             </div>
             </section>
 
-            <section class="running-text-container" aria-label="Praymory App Promotion">
-                <div class="running-text">
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                </div>
-                <div class="running-text">
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                    We Pray With Praymory
-                    <span class="logo-placeholder"></span>
-                </div>
-            </section>
+<section
+        class="running-text-container"
+        aria-label="Praymory App Promotion"
+        data-i18n-attr="aria-label:running.aria"
+      >
+        <div class="running-track">
+          <div class="running-text">
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+          </div>
+          <div class="running-text" aria-hidden="true">
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">We Pray With Praymory</span>
+            <span class="logo-placeholder"></span>
+          </div>
+        </div>
+      </section>
 
             <section class="contacts">
                 <div class="cont-sec-full">
@@ -254,6 +274,17 @@
             
         </main>
     </div>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const card = document.querySelector('.big-card-element');
+            const button = document.querySelector('.donate-btn');
+            
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
     <script src="js/Cursor.js"></script>
     <script src="js/share-btn.js"></script>
 </body>

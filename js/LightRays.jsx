@@ -283,7 +283,7 @@ const lightRays1Container = document.getElementById('lightRays1');
 
 let lightRays1Props = {
   raysOrigin: "top-center",
-  raysColor: "#FFD373",
+  raysColor: "#FFFFE7",
   raysSpeed: 1.5,
   lightSpread: 0.8,
   rayLength: 1.2,
