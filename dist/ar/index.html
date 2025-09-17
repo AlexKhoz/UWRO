@@ -1,0 +1,778 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWRO — المنظمة العالمية للدين الموحد</title>
+
+    <!-- React and ReactDOM -->
+    <script crossorigin="" src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin="" src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="alternate" hreflang="en" href="../en/"><link rel="alternate" hreflang="es" href="../es/"><link rel="alternate" hreflang="fr" href="../fr/"><link rel="alternate" hreflang="de" href="../de/"><link rel="alternate" hreflang="ar" href="../ar/"><link rel="alternate" hreflang="zh" href="../zh/"><link rel="alternate" hreflang="ru" href="../ru/"><link rel="alternate" hreflang="pt" href="../pt/"><link rel="alternate" hreflang="hi" href="../hi/"><link rel="alternate" hreflang="ja" href="../ja/"><link rel="alternate" hreflang="x-default" href="../en/"></head>
+  <body>
+    <header>
+      <div class="header-actions">
+        <button id="locale-button" class="locale-button" aria-haspopup="menu" aria-expanded="false" aria-controls="locale-menu" title="Change language">
+          🌐
+        </button>
+        <nav id="nav-icon">
+          <span></span>
+          <span></span>
+        </nav>
+      </div>
+      <nav id="locale-menu" class="locale-menu" role="menu" aria-labelledby="locale-button">
+        <a href="/en/" role="menuitem" lang="en">English</a>
+        <a href="/fr/" role="menuitem" lang="fr">Français</a>
+        <a href="/de/" role="menuitem" lang="de">Deutsch</a>
+        <a href="/es/" role="menuitem" lang="es">Español</a>
+        <a href="/ar/" role="menuitem" lang="ar" dir="rtl">العربية</a>
+        <a href="/zh/" role="menuitem" lang="zh">中文</a>
+        <a href="/ru/" role="menuitem" lang="ru">Русский</a>
+        <a href="/pt/" role="menuitem" lang="pt">Português</a>
+        <a href="/hi/" role="menuitem" lang="hi">हिन्दी</a>
+        <a href="/ja/" role="menuitem" lang="ja">日本語</a>
+      </nav>
+      <img src="../images/Isolation_Mode.svg" alt="المنظمة العالمية للدين الموحد" class="org-name" data-i18n-attr="alt:org.logoAlt">
+      <div id="mySidenav" class="sidenav">
+        <a href="#who-we-are" data-i18n="nav.whoWeAre">من نحن</a>
+        <a href="#our-causes" data-i18n="nav.ourCauses">قضايانا</a>
+        <a href="#our-causes" style="font-size: 20px" data-i18n="nav.divineDigital">الرقمي الإلهي</a>
+        <a href="#eternal-map" style="font-size: 20px" data-i18n="nav.eternalMap">الخريطة الأبدية</a>
+        <a href="#faith-of-harmony" style="font-size: 20px" data-i18n="nav.faithOfHarmony">إيمان التناغم</a>
+        <a href="#divine-donor-status" style="font-size: 20px" data-i18n="nav.divineDonorStatus">حالة المتبرع الإلهية</a>
+        <a href="#presidents-word" data-i18n="nav.presidentsMessage">رسالة الرئيس</a>
+        <a href="#donation-form" data-i18n="nav.donations">التبرعات</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title" data-i18n="hero.title">حيث تلتقي التكنولوجيا بالإيمان</h1>
+          <p class="hero-text" data-i18n="hero.subtitle">أول مؤسسة خيرية للتقنية والتصميم تدعم 16 ديانة حول العالم</p>
+          <button class="donate-btn" type="button" onclick="document.getElementById('donation-form').scrollIntoView({behavior: 'smooth'});" data-i18n="hero.cta">تبرع الآن</button>
+
+          <!-- <div class="big-logo-container">
+            <img
+              src="svg/UWRO short.svg"
+              class="big-logo"
+              alt="UWRO Logo Background"
+            />
+          </div> -->
+        </div>
+        <div id="lightRays1" class="light-rays"></div>
+      </section>
+
+      <div class="big-logo-container-top">
+        <img src="../svg/UWRO short.svg" class="big-logo-top" alt="UWRO Logo">
+      </div>
+
+      <div class="opacity-container">
+        <section class="partners-logos" aria-label="شركاؤنا" data-i18n-attr="aria-label:partners.aria">
+          <div class="logo-container logo-scroll">
+            <div class="religion-icon">
+              <img src="../Religion-icons/Armenian Apostolic Church.svg">
+              <p class="back-text" data-i18n="religions.armenianApostolicChurch">الكنيسة الرسولية الأرمنية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Baha╠ü╩╝i╠ü Faith.svg">
+              <p class="back-text" data-i18n="religions.bahaiFaith">الديانة البهائية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Buddism.svg">
+              <p class="back-text" data-i18n="religions.buddhism">البوذية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Catholic Christianity.svg">
+              <p class="back-text" data-i18n="religions.catholicChristianity">المسيحية الكاثوليكية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Confucianism.svg">
+              <p class="back-text" data-i18n="religions.confucianism">الكونفوشيوسية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Hinduism.svg">
+              <p class="back-text" data-i18n="religions.hinduism">الهندوسية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Islam.svg">
+              <p class="back-text" data-i18n="religions.islam">الإسلام</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Jainism.svg">
+              <p class="back-text" data-i18n="religions.jainism">الجاينية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Judaism.svg">
+              <p class="back-text" data-i18n="religions.judaism">اليهودية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Mormonism.svg">
+              <p class="back-text" data-i18n="religions.mormonism">المورمونية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Orthodox Christianity.svg">
+              <p class="back-text" data-i18n="religions.orthodoxChristianity">المسيحية الأرثوذكسية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Protestantism.svg">
+              <p class="back-text" data-i18n="religions.protestantism">البروتستانتية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Shinto.svg">
+              <p class="back-text" data-i18n="religions.shinto">الشنتو</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Sikhism.svg">
+              <p class="back-text" data-i18n="religions.sikhism">السيخية</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Yoruba.svg">
+              <p class="back-text" data-i18n="religions.yoruba">اليوروبا</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Zoroastrianism.svg">
+              <p class="back-text" data-i18n="religions.zoroastrianism">الزرادشتية</p>
+            </div>
+
+            <!-- Duplicate for seamless loop -->
+            <div aria-hidden="true" style="display: contents">
+              <div class="religion-icon">
+                <img src="../Religion-icons/Armenian Apostolic Church.svg">
+                <p class="back-text" data-i18n="religions.armenianApostolicChurch">الكنيسة الرسولية الأرمنية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Baha╠ü╩╝i╠ü Faith.svg">
+                <p class="back-text" data-i18n="religions.bahaiFaith">الديانة البهائية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Buddism.svg">
+                <p class="back-text" data-i18n="religions.buddhism">البوذية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Catholic Christianity.svg">
+                <p class="back-text" data-i18n="religions.catholicChristianity">المسيحية الكاثوليكية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Confucianism.svg">
+                <p class="back-text" data-i18n="religions.confucianism">الكونفوشيوسية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Hinduism.svg">
+                <p class="back-text" data-i18n="religions.hinduism">الهندوسية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Islam.svg">
+                <p class="back-text" data-i18n="religions.islam">الإسلام</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Jainism.svg">
+                <p class="back-text" data-i18n="religions.jainism">الجاينية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Judaism.svg">
+                <p class="back-text" data-i18n="religions.judaism">اليهودية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Mormonism.svg">
+                <p class="back-text" data-i18n="religions.mormonism">المورمونية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Orthodox Christianity.svg">
+                <p class="back-text" data-i18n="religions.orthodoxChristianity">المسيحية الأرثوذكسية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Protestantism.svg">
+                <p class="back-text" data-i18n="religions.protestantism">البروتستانتية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Shinto.svg">
+                <p class="back-text" data-i18n="religions.shinto">الشنتو</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Sikhism.svg">
+                <p class="back-text" data-i18n="religions.sikhism">السيخية</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Yoruba.svg">
+                <p class="back-text" data-i18n="religions.yoruba">اليوروبا</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Zoroastrianism.svg">
+                <p class="back-text" data-i18n="religions.zoroastrianism">الزرادشتية</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="h3" id="who-we-are" data-i18n="about.title">من نحن</h2>
+          <p class="mission-text" data-i18n="about.mission">تحالف عالمي ملتزم بتعزيز السلام والتفاهم. نؤمن بأن الإيمان يجب أن يوحد لا أن يفرق — ونعمل عبر الحوار والتعليم والعمل المشترك.</p>
+        </section>
+
+        <section class="updates-section">
+          <h2 class="h3" style="margin-bottom: 32px" data-i18n="updates.title">تابع أحدث تحديثاتنا</h2>
+          <div class="subscription-form">
+            <form>
+              <input type="email" placeholder="البريد الإلكتروني" required="" aria-label="عنوان البريد الإلكتروني" data-i18n-attr="placeholder:updates.emailPh;aria-label:updates.emailAria">
+              <input type="text" placeholder="الاسم" required="" aria-label="الاسم الكامل" data-i18n-attr="placeholder:updates.namePh;aria-label:updates.nameAria">
+              <button type="submit" class="button-amen" data-i18n="updates.cta">اشترك وآمين</button>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <section class="divine-digital-section" id="our-causes">
+        <div class="dd-container">
+          <h2 class="dd-header" data-i18n="dd.title">الرقمية الإلهية</h2>
+
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-1" role="img" aria-label="تصور النظام الرقمي للمنظمات الدينية" data-i18n-attr="aria-label:dd.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="dd.quote">الجسر الرقمي نحو الخلود الروحي</h3>
+                <p class="dd-description" data-i18n="dd.description">نقرب الإيمان ونجعله أكثر حداثة وسهولة عبر إنشاء نظام رقمي للمعابد والمساجد والكنائس والمراكز الروحية والمنظمات الدينية حول العالم — عبر أكثر من 14 ديانة.</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service1">إنشاء مواقع عصرية وغنية بالمعلومات وتصميم هويات للمنظمات الدينية</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service2">تطوير تطبيقات الهاتف المحمول</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service3">دعم إدارة حسابات التواصل الاجتماعي</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="eternal-map">
+        <div class="dd-container is-white">
+          <h2 class="dd-header" data-i18n="em.title">الخريطة الأبدية</h2>
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-2" role="img" aria-label="تصور تقنية تنقل المقابر" data-i18n-attr="aria-label:em.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="em.quote">تنقل الذاكرة</h3>
+                <p class="dd-description" data-i18n="em.description">نطور تقنية تساعد الناس على العثور على أحبائهم بسهولة وإظهار الاهتمام بهم مهما كانت المسافة.</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="em.service1">أنظمة تنقل في المقابر لتحديد مواقع الأحبة عبر تطبيق أو شاشة</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="em.service2">خدمات توصيل الزهور وتنظيف القبور أصبحت أسهل</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="faith-of-harmony">
+        <div class="dd-container">
+          <h2 class="dd-header" data-i18n="foh.title">إيمان الانسجام</h2>
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-3" role="img" aria-label="تصور التعاون الموسيقي بين الأديان" data-i18n-attr="aria-label:foh.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="foh.quote">موسيقى توحد السماوات</h3>
+                <p class="dd-description" data-i18n="foh.description">نبتكر صيغة جديدة للحوار بين الأديان — عبر الموسيقى والعاطفة والإبداع.</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service1">منصة ثقافية للتعبير بالموسيقى</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service2">العلامة الموسيقية الروحية الدولية UWRO Music</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service3">إطلاق موجة FM حول العالم</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service4">تنظيم مهرجانات إيمانية بمشاركة ممثلين من ديانات وتقاليد مختلفة</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="divine-donor-status">
+        <div class="dd-container is-white">
+          <h2 class="dd-header" data-i18n="dds.title">حالة المتبرع الإلهية</h2>
+          <div class="dd-content">
+            <!-- Cards using unified classes -->
+            <div class="cards-grid">
+              <!-- Card 1 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🕯️</div>
+                    <p class="card-title" data-i18n-html="dds.card1.frontTitle">LIGHT BEARER <br>$ 1 - $ 99</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card1.backTitle">LIGHT BEARER</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card1.blessingsTitle">تشمل بركاتك</b>
+                    </p>
+                    <p class="back-text" data-i18n-html="dds.card1.blessing1">رسالة شكر مؤثرة <br>وذكر اسمك على جدار الامتنان في UWRO</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🛡️</div>
+                    <p class="card-title" data-i18n-html="dds.card2.frontTitle">FLAME KEEPER <br>$ 100 - $ 999</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card2.backTitle">FLAME KEEPER</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card2.blessingsTitle">تشمل بركاتك</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card2.blessing1">جميع بركات Light Bearer</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card2.blessing2">شهادة رقمية مخصصة</p>
+                    <p class="back-text" data-i18n="dds.card2.blessing3">وصول لمدة 3 أشهر إلى تطبيق Praymory</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🕊</div>
+                    <p class="card-title" data-i18n-html="dds.card3.frontTitle">PILLAR OF HARMONY <br>$ 1k - $ 10k</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card3.backTitle">PILLAR OF HARMONY</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card3.blessingsTitle">تشمل بركاتك</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card3.blessing1">جميع بركات Flame Keeper</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card3.blessing2">قبعة UWRO بإصدار محدود</p>
+                    <p class="back-text" data-i18n="dds.card3.blessing3">وصول بريميوم لمدة 12 شهراً إلى Praymory</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🛕</div>
+                    <p class="card-title" data-i18n-html="dds.card4.frontTitle">ARCHITECT OF UNITY <br>$ 10k - $ 100k</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card4.backTitle">ARCHITECT OF UNITY</h3>
+                    <!--<p class="back-text"><b>Your blessings include</b></p>-->
+                    <p class="back-text">
+                      <i data-i18n="dds.card4.blessing1">جميع بركات Pillar of Harmony</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card4.blessing2">اسمك منقوش في قسم مخصص</p>
+                    <p class="back-text" data-i18n="dds.card4.blessing3">قسم على موقع UWRO</p>
+                    <p class="back-text" data-i18n="dds.card4.blessing4">فيديو شكر شخصي من فريق UWRO</p>
+                    <p class="back-text" data-i18n="dds.card4.blessing5">3 سنوات من Praymory Premium لثلاثة أجهزة</p>
+                    <p class="back-text" data-i18n="dds.card4.blessing6">لوحة تذكارية مادية</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🌳</div>
+                    <p class="card-title" data-i18n-html="dds.card5.frontTitle">GUARDIAN OF ETERNITY <br>$ 100k - $ 1M</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card5.backTitle">GUARDIAN OF ETERNITY</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card5.blessingsTitle">تشمل بركاتك</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card5.blessing1">جميع بركات Architect of Unity</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card5.blessing2">شجرة أو نجمة مخصصة في "الحديقة الرقمية للذكرى"</p>
+                    <p class="back-text" data-i18n="dds.card5.blessing3">دعوات VIP لفعاليات UWRO</p>
+                    <p class="back-text" data-i18n="dds.card5.blessing4">فرصة إنشاء منحة شخصية</p>
+                    <p class="back-text" data-i18n="dds.card5.blessing5">5 سنوات وصول Praymory لخمسة أجهزة</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">👑</div>
+                    <p class="card-title" data-i18n-html="dds.card6.frontTitle">ETERNAL FOUNDER <br>$ 1M+</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card6.backTitle">ETERNAL FOUNDER</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card6.blessing1">جميع بركات Guardian of Eternity</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card6.blessing2">جميع بركات Architect Of Unity</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card6.blessing3">اسمك منقوش على النصب التذكاري الرقمي (وربما المادي)</p>
+                    <p class="back-text" data-i18n="dds.card6.blessing4">حق إنشاء مشروع أو قسم ضمن UWRO</p>
+                    <p class="back-text" data-i18n="dds.card6.blessing5">التأثير في صياغة مستقبل UWRO الاستراتيجي</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="dd-text-content" id="divine-donor-status">
+              <div class="dd-quote-section">
+                <p class="dd-quote" data-i18n="dds.introTitle">افتح رتبتك الإلهية بالعطاء</p>
+                <p class="dd-description" data-i18n="dds.introDesc1">في UWRO تبرعك ليس دعماً فقط — إنه فعل مقدس يبني وحدة بين الأديان ويقيم ملاذات رقمية وينير طريق النمو الروحي.</p>
+                <p class="dd-description" data-i18n="dds.introDesc2">كلما أعطيت أكثر ارتقيت في رتب المتبرعين — كل رتبة تجسد سخاءك وأثرك. ولكل رتبة بركاتها وتقديرها ومكافآتها الروحية.</p>
+              </div>
+
+              <div class="dd-quote-section">
+                <div class="dd-quote" data-i18n="dds.howTitle">هكذا تعمل الأمور…</div>
+                <p class="dd-description" data-i18n="dds.howDesc1">كلما زاد عطاؤك زاد نورك. من 10$ إلى 1,000,000$+ يفتح كل تبرع رتبة جديدة — من حامل النور إلى المؤسس الأبدي.</p>
+                <p class="dd-description" data-i18n="dds.howDesc2">وخلال الطريق ستحصل على مزايا مثل الوصول الحصري لتطبيق Praymory وسجلات تذكارية رقمية ودعوات VIP وامتنان أبدي.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="divine-digital-section">
+                <div class="dd-container is-white">
+                    <h2 class="dd-header">What We Did</h2>
+                    <div class="dd-content">
+                        <div class="dd-image-placeholder img-4" role="img" aria-label="Interfaith musical collaboration visualization">
+                        </div>
+                        
+                        <div class="dd-text-content">
+                            <div class="dd-quote-section">
+                                <h3 class="dd-quote">Text placeholder</h3>
+                                <p class="dd-description">Text placeholder-Text placeholder-Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                            </div>
+                            
+                            <div class="dd-services">
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+                                
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+      <section class="quote-section" id="presidents-word">
+        <div class="hero-content">
+          <blockquote class="quote-title" data-i18n="pres.quote1">نقدم إسهاماً مؤثراً في العالم الديني في عصر الرقمنة العالمية. من الآن فصاعداً سيجسد الإيمان والدين أرفع معايير التقنية والفن.</blockquote>
+          <blockquote class="quote-title" data-i18n="pres.quote2">لا نغير الإيمان — بل نقويه ونجعله متاحاً للجميع.</blockquote>
+          <p class="back-text"><b data-i18n="pres.name">نايل سيفوتدينوف</b></p>
+          <p class="back-text">
+            <i data-i18n="pres.title">رئيس UWRO</i>
+          </p>
+        </div>
+        <div id="orb1" class="orb-container"></div>
+      </section>
+
+      <!-- Donate Section -->
+
+      <section class="change-lives-give" id="donation-form">
+        <!-- Header Section -->
+        <div class="header">
+          <h2 class="h3" data-i18n="donate.title">غيّر الحياة. تبرّع بإيمان.</h2>
+          <p class="hero-text">
+            <span data-i18n="donate.disclaimer">نلتزم بالشفافية التامة: 90% من الأموال تدعم قضايانا مباشرةً، و5% للإدارة و5% للتواصل.</span>
+          </p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-container">
+          <div class="form-grid">
+            <!-- Email & Name Inputs -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.enterTitle">أدخل بريدك الإلكتروني واسمك</p>
+              <input type="email" placeholder="البريد الإلكتروني" required="" aria-label="عنوان البريد الإلكتروني" data-i18n-attr="placeholder:donate.emailPh;aria-label:donate.emailAria">
+              <input type="text" placeholder="الاسم" required="" aria-label="الاسم الكامل" data-i18n-attr="placeholder:donate.namePh;aria-label:donate.nameAria">
+            </div>
+
+            <!-- Frequency Selection -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.frequencyTitle">اختر التكرار</p>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="frequency" value="monthly">
+                  <span class="frequency-button" data-i18n="donate.monthly">شهري</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="frequency" value="onetime">
+                  <span class="frequency-button" data-i18n="donate.oneTime">مرة واحدة</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Card Section -->
+            <div class="carousel-section">
+              <div id="carousel-root"></div>
+            </div>
+
+            <!-- Amount Selection -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.amountTitle">اختر المبلغ</p>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$5">
+                  <span class="frequency-button">$5</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$25">
+                  <span class="frequency-button">$25</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$50">
+                  <span class="frequency-button">$50</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$100">
+                  <span class="frequency-button">$100</span>
+                </label>
+              </div>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$300">
+                  <span class="frequency-button">$300</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$500">
+                  <span class="frequency-button">$500</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$1000">
+                  <span class="frequency-button">$1000</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$5000">
+                  <span class="frequency-button">$5000</span>
+                </label>
+              </div>
+              <label class="frequency-radio">
+                <input type="radio" name="amount" value="" id="customAmountRadio" onchange="this.nextElementSibling.focus()">
+                <input type="text" inputmode="numeric" placeholder="اكتب المبلغ" aria-label="اكتب المبلغ" id="customAmountInput" oninput="handleCustomAmount(this)" onclick="this.form.amount.value=''; document.getElementById('customAmountRadio').checked = true;" data-i18n-attr="placeholder:donate.customAmountPh;aria-label:donate.customAmountAria">
+              </label>
+            </div>
+          </div>
+          <div class="button-amen" data-i18n="donate.blessingCta">باركك الله!</div>
+        </div>
+      </section>
+
+      <section class="running-text-container" aria-label="الترويج لتطبيق Praymory" data-i18n-attr="aria-label:running.aria">
+        <div class="running-track">
+          <div class="running-text">
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+          </div>
+          <div class="running-text" aria-hidden="true">
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">نصلي مع Praymory</span>
+            <span class="logo-placeholder"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacts">
+        <div class="cont-sec-full">
+          <h2 class="sign-up-for-our" data-i18n-html="contacts.titleDesktop">اشترك في نشرتنا البريدية<br>لتصلك تحديثات UWRO</h2>
+          <form class="newsletter-form">
+            <input type="text" placeholder="البريد الإلكتروني" required="" aria-label="البريد الإلكتروني" data-i18n-attr="placeholder:contacts.emailPh;aria-label:contacts.emailAria">
+            <button type="submit" class="button-amen" data-i18n="contacts.subscribeCta">اشترك</button>
+          </form>
+        </div>
+
+        <div class="social-section-mob">
+          <h3 class="text-wrapper-3" data-i18n="contacts.followUs">تابعنا</h3>
+          <nav class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link">INSTAGRAM</a>
+            <a href="#" class="social-link">LINKEDIN</a>
+            <a href="#" class="social-link">X</a>
+          </nav>
+          <a href="#" class="privacy-link" data-i18n="contacts.privacyPolicy">سياسة الخصوصية</a>
+        </div>
+
+        <div class="cont-sec-mob">
+          <h2 class="sign-up-for-our" data-i18n-html="contacts.titleMobile">اشترك في نشرتنا البريدية<br>لتصلك تحديثات UWRO</h2>
+          <form>
+            <input type="email" placeholder="البريد الإلكتروني" required="" aria-label="البريد الإلكتروني" data-i18n-attr="placeholder:contacts.emailPh;aria-label:contacts.emailAria">
+            <input type="text" placeholder="الاسم" required="" aria-label="الاسم الكامل" data-i18n-attr="placeholder:contacts.namePh;aria-label:contacts.nameAria">
+            <button type="submit" class="button-amen" data-i18n="contacts.subscribeNow">اشترك الآن</button>
+          </form>
+        </div>
+
+        <div class="social-section">
+          <h3 class="text-wrapper-3">Follow Us</h3>
+          <nav class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link">INSTAGRAM</a>
+            <a href="#" class="social-link">LINKEDIN</a>
+            <a href="#" class="social-link">X</a>
+          </nav>
+          <a href="#" class="privacy-link">PRIVACY POLICY</a>
+        </div>
+
+        <div class="footer">
+          <img src="../svg/UWRO Full.svg" class="footer-logo full" alt="شعار المنظمة العالمية للدين الموحد (كامل)" data-i18n-attr="alt:org.footerFullLogoAlt">
+          <img src="../svg/Logo-short-mob.svg" class="footer-logo short" alt="شعار المنظمة العالمية للدين الموحد (مختصر)" data-i18n-attr="alt:org.footerShortLogoAlt">
+        </div>
+      </section>
+    </main>
+
+    <!-- <script src="js/big-logo-change.js"></script> -->
+    <!-- <script src="js/vh-fix.js"></script> -->
+    <script src="../js/Cursor.js"></script>
+    <script type="text/babel" src="../js/card-carousel.jsx"></script>
+    <script src="../js/custom-amount.js"></script>
+    <script src="../js/menu-new.js"></script>
+    <script type="text/babel" src="../js/LightRays.jsx" defer=""></script>
+    <script type="text/babel" src="../js/Orb.jsx" defer=""></script>
+    <!--<script src="js/org-name-color-change.js"></script>-->
+    <!--<script src="js/stacking-effect.js"></script>-->
+    <script src="../js/locale-menu.js"></script>
+  
+
+</body></html>
