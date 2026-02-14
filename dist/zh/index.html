@@ -1,0 +1,778 @@
+<!DOCTYPE html><html lang="zh" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWRO — 世界联合宗教组织</title>
+
+    <!-- React and ReactDOM -->
+    <script crossorigin="" src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin="" src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="alternate" hreflang="en" href="../en/"><link rel="alternate" hreflang="es" href="../es/"><link rel="alternate" hreflang="fr" href="../fr/"><link rel="alternate" hreflang="de" href="../de/"><link rel="alternate" hreflang="ar" href="../ar/"><link rel="alternate" hreflang="zh" href="../zh/"><link rel="alternate" hreflang="ru" href="../ru/"><link rel="alternate" hreflang="pt" href="../pt/"><link rel="alternate" hreflang="hi" href="../hi/"><link rel="alternate" hreflang="ja" href="../ja/"><link rel="alternate" hreflang="x-default" href="../en/"></head>
+  <body>
+    <header>
+      <div class="header-actions">
+        <button id="locale-button" class="locale-button" aria-haspopup="menu" aria-expanded="false" aria-controls="locale-menu" title="Change language">
+          🌐
+        </button>
+        <nav id="nav-icon">
+          <span></span>
+          <span></span>
+        </nav>
+      </div>
+      <nav id="locale-menu" class="locale-menu" role="menu" aria-labelledby="locale-button">
+        <a href="/en/" role="menuitem" lang="en">English</a>
+        <a href="/fr/" role="menuitem" lang="fr">Français</a>
+        <a href="/de/" role="menuitem" lang="de">Deutsch</a>
+        <a href="/es/" role="menuitem" lang="es">Español</a>
+        <a href="/ar/" role="menuitem" lang="ar" dir="rtl">العربية</a>
+        <a href="/zh/" role="menuitem" lang="zh">中文</a>
+        <a href="/ru/" role="menuitem" lang="ru">Русский</a>
+        <a href="/pt/" role="menuitem" lang="pt">Português</a>
+        <a href="/hi/" role="menuitem" lang="hi">हिन्दी</a>
+        <a href="/ja/" role="menuitem" lang="ja">日本語</a>
+      </nav>
+      <img src="../images/Isolation_Mode.svg" alt="世界联合宗教组织" class="org-name" data-i18n-attr="alt:org.logoAlt">
+      <div id="mySidenav" class="sidenav">
+        <a href="#who-we-are" data-i18n="nav.whoWeAre">我们是谁</a>
+        <a href="#our-causes" data-i18n="nav.ourCauses">我们的事业</a>
+        <a href="#our-causes" style="font-size: 20px" data-i18n="nav.divineDigital">神圣数字</a>
+        <a href="#eternal-map" style="font-size: 20px" data-i18n="nav.eternalMap">永恒地图</a>
+        <a href="#faith-of-harmony" style="font-size: 20px" data-i18n="nav.faithOfHarmony">和谐之信</a>
+        <a href="#divine-donor-status" style="font-size: 20px" data-i18n="nav.divineDonorStatus">神圣捐赠者等级</a>
+        <a href="#presidents-word" data-i18n="nav.presidentsMessage">主席寄语</a>
+        <a href="#donation-form" data-i18n="nav.donations">捐赠</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title" data-i18n="hero.title">科技与信仰的交汇</h1>
+          <p class="hero-text" data-i18n="hero.subtitle">首个支持全球16种宗教的科技与设计慈善基金会</p>
+          <button class="donate-btn" type="button" onclick="document.getElementById('donation-form').scrollIntoView({behavior: 'smooth'});" data-i18n="hero.cta">立即捐赠</button>
+
+          <!-- <div class="big-logo-container">
+            <img
+              src="svg/UWRO short.svg"
+              class="big-logo"
+              alt="UWRO Logo Background"
+            />
+          </div> -->
+        </div>
+        <div id="lightRays1" class="light-rays"></div>
+      </section>
+
+      <div class="big-logo-container-top">
+        <img src="../svg/UWRO short.svg" class="big-logo-top" alt="UWRO Logo">
+      </div>
+
+      <div class="opacity-container">
+        <section class="partners-logos" aria-label="我们的合作伙伴" data-i18n-attr="aria-label:partners.aria">
+          <div class="logo-container logo-scroll">
+            <div class="religion-icon">
+              <img src="../Religion-icons/Armenian Apostolic Church.svg">
+              <p class="back-text" data-i18n="religions.armenianApostolicChurch">亚美尼亚使徒教会</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Baha╠ü╩╝i╠ü Faith.svg">
+              <p class="back-text" data-i18n="religions.bahaiFaith">巴哈伊信仰</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Buddism.svg">
+              <p class="back-text" data-i18n="religions.buddhism">佛教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Catholic Christianity.svg">
+              <p class="back-text" data-i18n="religions.catholicChristianity">天主教基督宗教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Confucianism.svg">
+              <p class="back-text" data-i18n="religions.confucianism">儒家</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Hinduism.svg">
+              <p class="back-text" data-i18n="religions.hinduism">印度教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Islam.svg">
+              <p class="back-text" data-i18n="religions.islam">伊斯兰教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Jainism.svg">
+              <p class="back-text" data-i18n="religions.jainism">耆那教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Judaism.svg">
+              <p class="back-text" data-i18n="religions.judaism">犹太教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Mormonism.svg">
+              <p class="back-text" data-i18n="religions.mormonism">摩门教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Orthodox Christianity.svg">
+              <p class="back-text" data-i18n="religions.orthodoxChristianity">东正教基督宗教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Protestantism.svg">
+              <p class="back-text" data-i18n="religions.protestantism">新教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Shinto.svg">
+              <p class="back-text" data-i18n="religions.shinto">神道</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Sikhism.svg">
+              <p class="back-text" data-i18n="religions.sikhism">锡克教</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Yoruba.svg">
+              <p class="back-text" data-i18n="religions.yoruba">约鲁巴</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Zoroastrianism.svg">
+              <p class="back-text" data-i18n="religions.zoroastrianism">祆教（琐罗亚斯德教）</p>
+            </div>
+
+            <!-- Duplicate for seamless loop -->
+            <div aria-hidden="true" style="display: contents">
+              <div class="religion-icon">
+                <img src="../Religion-icons/Armenian Apostolic Church.svg">
+                <p class="back-text" data-i18n="religions.armenianApostolicChurch">亚美尼亚使徒教会</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Baha╠ü╩╝i╠ü Faith.svg">
+                <p class="back-text" data-i18n="religions.bahaiFaith">巴哈伊信仰</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Buddism.svg">
+                <p class="back-text" data-i18n="religions.buddhism">佛教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Catholic Christianity.svg">
+                <p class="back-text" data-i18n="religions.catholicChristianity">天主教基督宗教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Confucianism.svg">
+                <p class="back-text" data-i18n="religions.confucianism">儒家</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Hinduism.svg">
+                <p class="back-text" data-i18n="religions.hinduism">印度教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Islam.svg">
+                <p class="back-text" data-i18n="religions.islam">伊斯兰教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Jainism.svg">
+                <p class="back-text" data-i18n="religions.jainism">耆那教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Judaism.svg">
+                <p class="back-text" data-i18n="religions.judaism">犹太教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Mormonism.svg">
+                <p class="back-text" data-i18n="religions.mormonism">摩门教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Orthodox Christianity.svg">
+                <p class="back-text" data-i18n="religions.orthodoxChristianity">东正教基督宗教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Protestantism.svg">
+                <p class="back-text" data-i18n="religions.protestantism">新教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Shinto.svg">
+                <p class="back-text" data-i18n="religions.shinto">神道</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Sikhism.svg">
+                <p class="back-text" data-i18n="religions.sikhism">锡克教</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Yoruba.svg">
+                <p class="back-text" data-i18n="religions.yoruba">约鲁巴</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Zoroastrianism.svg">
+                <p class="back-text" data-i18n="religions.zoroastrianism">祆教（琐罗亚斯德教）</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="h3" id="who-we-are" data-i18n="about.title">我们是谁</h2>
+          <p class="mission-text" data-i18n="about.mission">一个致力于促进和平与理解的全球联盟。我们相信信仰应当联结而非分裂——我们通过对话、教育与共同行动推动这一目标。</p>
+        </section>
+
+        <section class="updates-section">
+          <h2 class="h3" style="margin-bottom: 32px" data-i18n="updates.title">关注我们的最新动态</h2>
+          <div class="subscription-form">
+            <form>
+              <input type="email" placeholder="邮箱" required="" aria-label="电子邮箱地址" data-i18n-attr="placeholder:updates.emailPh;aria-label:updates.emailAria">
+              <input type="text" placeholder="姓名" required="" aria-label="全名" data-i18n-attr="placeholder:updates.namePh;aria-label:updates.nameAria">
+              <button type="submit" class="button-amen" data-i18n="updates.cta">订阅并阿门</button>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <section class="divine-digital-section" id="our-causes">
+        <div class="dd-container">
+          <h2 class="dd-header" data-i18n="dd.title">神圣数字</h2>
+
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-1" role="img" aria-label="宗教组织数字生态可视化" data-i18n-attr="aria-label:dd.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="dd.quote">通向灵性永恒的数字之桥</h3>
+                <p class="dd-description" data-i18n="dd.description">我们为寺庙、清真寺、教堂、灵修中心及宗教组织打造数字生态，让信仰更亲近、更现代、更易触达——覆盖14种以上的宗教。</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service1">为宗教组织创建现代、雅致且信息丰富的网站与品牌设计</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service2">移动应用开发</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service3">支持宗教组织进行社交媒体管理</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="eternal-map">
+        <div class="dd-container is-white">
+          <h2 class="dd-header" data-i18n="em.title">永恒地图</h2>
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-2" role="img" aria-label="墓园导航技术可视化" data-i18n-attr="aria-label:em.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="em.quote">记忆的导航</h3>
+                <p class="dd-description" data-i18n="em.description">我们开发的技术帮助人们轻松找到逝去的亲友，并跨越距离表达关怀。</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="em.service1">墓园导航系统可通过应用或导航屏定位亲友</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="em.service2">鲜花寄送与墓地清洁服务变得更加便捷</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="faith-of-harmony">
+        <div class="dd-container">
+          <h2 class="dd-header" data-i18n="foh.title">和谐之信</h2>
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-3" role="img" aria-label="跨宗教音乐合作可视化" data-i18n-attr="aria-label:foh.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="foh.quote">联合苍穹的音乐</h3>
+                <p class="dd-description" data-i18n="foh.description">我们以音乐、情感与创造力，开创跨宗教对话的新形式。</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service1">文化平台：各宗教可通过音乐表达自我</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service2">国际灵性音乐厂牌 UWRO Music</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service3">在全球开播 FM 频段</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service4">举办涵盖不同宗教与传统代表的信仰节</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="divine-donor-status">
+        <div class="dd-container is-white">
+          <h2 class="dd-header" data-i18n="dds.title">神圣捐赠者等级</h2>
+          <div class="dd-content">
+            <!-- Cards using unified classes -->
+            <div class="cards-grid">
+              <!-- Card 1 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🕯️</div>
+                    <p class="card-title" data-i18n-html="dds.card1.frontTitle">LIGHT BEARER <br>$ 1 - $ 99</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card1.backTitle">LIGHT BEARER</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card1.blessingsTitle">你的祝福包括</b>
+                    </p>
+                    <p class="back-text" data-i18n-html="dds.card1.blessing1">一封真挚的感谢邮件 <br>你的名字将展示在 UWRO 感恩墙上</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🛡️</div>
+                    <p class="card-title" data-i18n-html="dds.card2.frontTitle">FLAME KEEPER <br>$ 100 - $ 999</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card2.backTitle">FLAME KEEPER</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card2.blessingsTitle">你的祝福包括</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card2.blessing1">包含所有光之承载者的祝福</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card2.blessing2">个性化数字证书</p>
+                    <p class="back-text" data-i18n="dds.card2.blessing3">Praymory 应用三个月使用权</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🕊</div>
+                    <p class="card-title" data-i18n-html="dds.card3.frontTitle">PILLAR OF HARMONY <br>$ 1k - $ 10k</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card3.backTitle">PILLAR OF HARMONY</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card3.blessingsTitle">你的祝福包括</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card3.blessing1">包含所有火焰守护者的祝福</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card3.blessing2">UWRO 限量款帽子</p>
+                    <p class="back-text" data-i18n="dds.card3.blessing3">Praymory 12 个月高级访问</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🛕</div>
+                    <p class="card-title" data-i18n-html="dds.card4.frontTitle">ARCHITECT OF UNITY <br>$ 10k - $ 100k</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card4.backTitle">ARCHITECT OF UNITY</h3>
+                    <!--<p class="back-text"><b>Your blessings include</b></p>-->
+                    <p class="back-text">
+                      <i data-i18n="dds.card4.blessing1">包含所有和谐之柱的祝福</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card4.blessing2">你的名字将镌刻在专属区域</p>
+                    <p class="back-text" data-i18n="dds.card4.blessing3">UWRO 网站的专属区块</p>
+                    <p class="back-text" data-i18n="dds.card4.blessing4">UWRO 团队的个人致谢视频</p>
+                    <p class="back-text" data-i18n="dds.card4.blessing5">Praymory 三年高级版（3 台设备）</p>
+                    <p class="back-text" data-i18n="dds.card4.blessing6">实体纪念铭牌</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🌳</div>
+                    <p class="card-title" data-i18n-html="dds.card5.frontTitle">GUARDIAN OF ETERNITY <br>$ 100k - $ 1M</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card5.backTitle">GUARDIAN OF ETERNITY</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card5.blessingsTitle">你的祝福包括</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card5.blessing1">包含所有团结建筑师的祝福</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card5.blessing2">在“数字记忆花园”中拥有一棵专属树或一颗专属星</p>
+                    <p class="back-text" data-i18n="dds.card5.blessing3">受邀参加 UWRO 线下活动/节日（VIP）</p>
+                    <p class="back-text" data-i18n="dds.card5.blessing4">有机会设立个人资助</p>
+                    <p class="back-text" data-i18n="dds.card5.blessing5">Praymory 五年使用权（5 台设备）</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">👑</div>
+                    <p class="card-title" data-i18n-html="dds.card6.frontTitle">ETERNAL FOUNDER <br>$ 1M+</p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card6.backTitle">ETERNAL FOUNDER</h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card6.blessing1">包含所有永恒守护者的祝福</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card6.blessing2">包含所有团结建筑师的祝福</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card6.blessing3">你的名字将镌刻于数字（及可能的实体）纪念碑上</p>
+                    <p class="back-text" data-i18n="dds.card6.blessing4">有权设立一个 UWRO 项目或部门</p>
+                    <p class="back-text" data-i18n="dds.card6.blessing5">助力塑造 UWRO 的战略未来</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="dd-text-content" id="divine-donor-status">
+              <div class="dd-quote-section">
+                <p class="dd-quote" data-i18n="dds.introTitle">通过奉献解锁你的神圣等级</p>
+                <p class="dd-description" data-i18n="dds.introDesc1">在 UWRO，你的捐赠不仅仅是支持——它是一项神圣之举，促成信仰间的团结，建设数字圣所，并照亮灵性成长之路。</p>
+                <p class="dd-description" data-i18n="dds.introDesc2">随着你的奉献，你将在神圣捐赠者等级中晋升——每一级都彰显你的慷慨与影响。每一级都伴随独有的祝福、认可与灵性回馈。</p>
+              </div>
+
+              <div class="dd-quote-section">
+                <div class="dd-quote" data-i18n="dds.howTitle">运作方式…</div>
+                <p class="dd-description" data-i18n="dds.howDesc1">你给予越多，光芒越盛。从 $10 到 $1,000,000+，每笔捐赠都会解锁新的等级——从谦卑的光之承载者到传奇的永恒创始人。</p>
+                <p class="dd-description" data-i18n="dds.howDesc2">过程中你将获得诸多礼遇，如 Praymory 应用的独家使用权、数字纪念、VIP 邀请，以及永恒的感恩（字面意义）。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="divine-digital-section">
+                <div class="dd-container is-white">
+                    <h2 class="dd-header">What We Did</h2>
+                    <div class="dd-content">
+                        <div class="dd-image-placeholder img-4" role="img" aria-label="Interfaith musical collaboration visualization">
+                        </div>
+                        
+                        <div class="dd-text-content">
+                            <div class="dd-quote-section">
+                                <h3 class="dd-quote">Text placeholder</h3>
+                                <p class="dd-description">Text placeholder-Text placeholder-Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                            </div>
+                            
+                            <div class="dd-services">
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+                                
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+      <section class="quote-section" id="presidents-word">
+        <div class="hero-content">
+          <blockquote class="quote-title" data-i18n="pres.quote1">我们在全球数字化时代为宗教世界作出有意义的贡献。从今以后，信仰与宗教将体现科技与艺术的最高标准。</blockquote>
+          <blockquote class="quote-title" data-i18n="pres.quote2">我们不改变信仰——我们强化并让其普及于众。</blockquote>
+          <p class="back-text"><b data-i18n="pres.name">Nail Saifutdinov</b></p>
+          <p class="back-text">
+            <i data-i18n="pres.title">UWRO 主席</i>
+          </p>
+        </div>
+        <div id="orb1" class="orb-container"></div>
+      </section>
+
+      <!-- Donate Section -->
+
+      <section class="change-lives-give" id="donation-form">
+        <!-- Header Section -->
+        <div class="header">
+          <h2 class="h3" data-i18n="donate.title">改变生命，以信仰之名奉献</h2>
+          <p class="hero-text">
+            <span data-i18n="donate.disclaimer">我们承诺完全透明：90% 资金直接用于我们的事业，仅 5% 用于管理、5% 用于传播。</span>
+          </p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-container">
+          <div class="form-grid">
+            <!-- Email & Name Inputs -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.enterTitle">输入你的邮箱与姓名</p>
+              <input type="email" placeholder="邮箱" required="" aria-label="电子邮箱地址" data-i18n-attr="placeholder:donate.emailPh;aria-label:donate.emailAria">
+              <input type="text" placeholder="姓名" required="" aria-label="全名" data-i18n-attr="placeholder:donate.namePh;aria-label:donate.nameAria">
+            </div>
+
+            <!-- Frequency Selection -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.frequencyTitle">选择频率</p>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="frequency" value="monthly">
+                  <span class="frequency-button" data-i18n="donate.monthly">每月</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="frequency" value="onetime">
+                  <span class="frequency-button" data-i18n="donate.oneTime">一次性</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Card Section -->
+            <div class="carousel-section">
+              <div id="carousel-root"></div>
+            </div>
+
+            <!-- Amount Selection -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.amountTitle">选择金额</p>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$5">
+                  <span class="frequency-button">$5</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$25">
+                  <span class="frequency-button">$25</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$50">
+                  <span class="frequency-button">$50</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$100">
+                  <span class="frequency-button">$100</span>
+                </label>
+              </div>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$300">
+                  <span class="frequency-button">$300</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$500">
+                  <span class="frequency-button">$500</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$1000">
+                  <span class="frequency-button">$1000</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$5000">
+                  <span class="frequency-button">$5000</span>
+                </label>
+              </div>
+              <label class="frequency-radio">
+                <input type="radio" name="amount" value="" id="customAmountRadio" onchange="this.nextElementSibling.focus()">
+                <input type="text" inputmode="numeric" placeholder="输入你的金额" aria-label="输入你的金额" id="customAmountInput" oninput="handleCustomAmount(this)" onclick="this.form.amount.value=''; document.getElementById('customAmountRadio').checked = true;" data-i18n-attr="placeholder:donate.customAmountPh;aria-label:donate.customAmountAria">
+              </label>
+            </div>
+          </div>
+          <div class="button-amen" data-i18n="donate.blessingCta">愿上天庇佑你！</div>
+        </div>
+      </section>
+
+      <section class="running-text-container" aria-label="Praymory 应用推广" data-i18n-attr="aria-label:running.aria">
+        <div class="running-track">
+          <div class="running-text">
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+          </div>
+          <div class="running-text" aria-hidden="true">
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">我们与 Praymory 一同祈祷</span>
+            <span class="logo-placeholder"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacts">
+        <div class="cont-sec-full">
+          <h2 class="sign-up-for-our" data-i18n-html="contacts.titleDesktop">订阅我们的新闻邮件<br>接收 UWRO 最新资讯</h2>
+          <form class="newsletter-form">
+            <input type="text" placeholder="邮箱" required="" aria-label="邮箱" data-i18n-attr="placeholder:contacts.emailPh;aria-label:contacts.emailAria">
+            <button type="submit" class="button-amen" data-i18n="contacts.subscribeCta">订阅</button>
+          </form>
+        </div>
+
+        <div class="social-section-mob">
+          <h3 class="text-wrapper-3" data-i18n="contacts.followUs">关注我们</h3>
+          <nav class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link">INSTAGRAM</a>
+            <a href="#" class="social-link">LINKEDIN</a>
+            <a href="#" class="social-link">X</a>
+          </nav>
+          <a href="#" class="privacy-link" data-i18n="contacts.privacyPolicy">隐私政策</a>
+        </div>
+
+        <div class="cont-sec-mob">
+          <h2 class="sign-up-for-our" data-i18n-html="contacts.titleMobile">订阅我们的新闻邮件<br>接收 UWRO 最新资讯</h2>
+          <form>
+            <input type="email" placeholder="邮箱" required="" aria-label="邮箱" data-i18n-attr="placeholder:contacts.emailPh;aria-label:contacts.emailAria">
+            <input type="text" placeholder="姓名" required="" aria-label="全名" data-i18n-attr="placeholder:contacts.namePh;aria-label:contacts.nameAria">
+            <button type="submit" class="button-amen" data-i18n="contacts.subscribeNow">现在订阅</button>
+          </form>
+        </div>
+
+        <div class="social-section">
+          <h3 class="text-wrapper-3">Follow Us</h3>
+          <nav class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link">INSTAGRAM</a>
+            <a href="#" class="social-link">LINKEDIN</a>
+            <a href="#" class="social-link">X</a>
+          </nav>
+          <a href="#" class="privacy-link">PRIVACY POLICY</a>
+        </div>
+
+        <div class="footer">
+          <img src="../svg/UWRO Full.svg" class="footer-logo full" alt="世界联合宗教组织完整标志" data-i18n-attr="alt:org.footerFullLogoAlt">
+          <img src="../svg/Logo-short-mob.svg" class="footer-logo short" alt="世界联合宗教组织短标志" data-i18n-attr="alt:org.footerShortLogoAlt">
+        </div>
+      </section>
+    </main>
+
+    <!-- <script src="js/big-logo-change.js"></script> -->
+    <!-- <script src="js/vh-fix.js"></script> -->
+    <script src="../js/Cursor.js"></script>
+    <script type="text/babel" src="../js/card-carousel.jsx"></script>
+    <script src="../js/custom-amount.js"></script>
+    <script src="../js/menu-new.js"></script>
+    <script type="text/babel" src="../js/LightRays.jsx" defer=""></script>
+    <script type="text/babel" src="../js/Orb.jsx" defer=""></script>
+    <!--<script src="js/org-name-color-change.js"></script>-->
+    <!--<script src="js/stacking-effect.js"></script>-->
+    <script src="../js/locale-menu.js"></script>
+  
+
+</body></html>

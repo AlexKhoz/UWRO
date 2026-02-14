@@ -1,17 +1,17 @@
 function LightRays(props) {
   const {
-      raysOrigin = "top-center",
-      raysColor = "#FF0000",
-      raysSpeed = 1,
-      lightSpread = 1,
-      rayLength = 5,
-      pulsating = false,
-      fadeDistance = 1.0,
-      saturation = 1.0,
-      followMouse = true,
-      mouseInfluence = 0.8,
-      noiseAmount = 0.0,
-      distortion = 0.0
+    raysOrigin = "top-center",
+    raysColor = "#FF0000",
+    raysSpeed = 1,
+    lightSpread = 1,
+    rayLength = 5,
+    pulsating = false,
+    fadeDistance = 1.0,
+    saturation = 1.0,
+    followMouse = true,
+    mouseInfluence = 0.8,
+    noiseAmount = 0.0,
+    distortion = 0.0,
   } = props;
 
   const canvasRef = React.useRef(null);
@@ -19,40 +19,51 @@ function LightRays(props) {
   const mouseRef = React.useRef({ x: 0.5, y: 0.5 });
 
   const hexToRgb = (hex) => {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result ? [
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result
+      ? [
           parseInt(result[1], 16) / 255,
           parseInt(result[2], 16) / 255,
-          parseInt(result[3], 16) / 255
-      ] : [1, 1, 1];
+          parseInt(result[3], 16) / 255,
+        ]
+      : [1, 1, 1];
   };
 
   const getAnchorAndDir = (origin, w, h) => {
-      const outside = 0.2;
-      switch (origin) {
-          case "top-left": return { anchor: [0, -outside * h], dir: [0, 1] };
-          case "top-right": return { anchor: [w, -outside * h], dir: [0, 1] };
-          case "left": return { anchor: [-outside * w, 0.5 * h], dir: [1, 0] };
-          case "right": return { anchor: [(1 + outside) * w, 0.5 * h], dir: [-1, 0] };
-          case "bottom-left": return { anchor: [0, (1 + outside) * h], dir: [0, -1] };
-          case "bottom-center": return { anchor: [0.5 * w, (1 + outside) * h], dir: [0, -1] };
-          case "bottom-right": return { anchor: [w, (1 + outside) * h], dir: [0, -1] };
-          default: return { anchor: [0.5 * w, -outside * h], dir: [0, 1] };
-      }
+    const outside = 0.2;
+    switch (origin) {
+      case "top-left":
+        return { anchor: [0, -outside * h], dir: [0, 1] };
+      case "top-right":
+        return { anchor: [w, -outside * h], dir: [0, 1] };
+      case "left":
+        return { anchor: [-outside * w, 0.5 * h], dir: [1, 0] };
+      case "right":
+        return { anchor: [(1 + outside) * w, 0.5 * h], dir: [-1, 0] };
+      case "bottom-left":
+        return { anchor: [0, (1 + outside) * h], dir: [0, -1] };
+      case "bottom-center":
+        return { anchor: [0.5 * w, (1 + outside) * h], dir: [0, -1] };
+      case "bottom-right":
+        return { anchor: [w, (1 + outside) * h], dir: [0, -1] };
+      default:
+        return { anchor: [0.5 * w, -outside * h], dir: [0, 1] };
+    }
   };
 
   React.useEffect(() => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-      if (!gl) {
-          console.error('WebGL not supported');
-          return;
-      }
+    const gl =
+      canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    if (!gl) {
+      console.error("WebGL not supported");
+      return;
+    }
 
-      // Vertex shader
-      const vertexSource = `
+    // Vertex shader
+    const vertexSource = `
           attribute vec2 position;
           varying vec2 vUv;
           void main() {
@@ -61,8 +72,8 @@ function LightRays(props) {
           }
       `;
 
-      // Fragment shader
-      const fragmentSource = `
+    // Fragment shader
+    const fragmentSource = `
           precision highp float;
           
           uniform float iTime;
@@ -146,212 +157,258 @@ function LightRays(props) {
           }
       `;
 
-      // Create shaders
-      const createShader = (source, type) => {
-          const shader = gl.createShader(type);
-          gl.shaderSource(shader, source);
-          gl.compileShader(shader);
-          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-              console.error('Shader error:', gl.getShaderInfoLog(shader));
-              gl.deleteShader(shader);
-              return null;
-          }
-          return shader;
-      };
-
-      const vertexShader = createShader(vertexSource, gl.VERTEX_SHADER);
-      const fragmentShader = createShader(fragmentSource, gl.FRAGMENT_SHADER);
-
-      // Create program
-      const program = gl.createProgram();
-      gl.attachShader(program, vertexShader);
-      gl.attachShader(program, fragmentShader);
-      gl.linkProgram(program);
-
-      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-          console.error('Program error:', gl.getProgramInfoLog(program));
-          return;
+    // Create shaders
+    const createShader = (source, type) => {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error("Shader error:", gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+        return null;
       }
+      return shader;
+    };
 
-      // Create buffer
-      const buffer = gl.createBuffer();
+    const vertexShader = createShader(vertexSource, gl.VERTEX_SHADER);
+    const fragmentShader = createShader(fragmentSource, gl.FRAGMENT_SHADER);
+
+    // Create program
+    const program = gl.createProgram();
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      console.error("Program error:", gl.getProgramInfoLog(program));
+      return;
+    }
+
+    // Create buffer
+    const buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([-1, -1, 3, -1, -1, 3]),
+      gl.STATIC_DRAW
+    );
+
+    // Get locations
+    const positionLocation = gl.getAttribLocation(program, "position");
+    const uniformLocations = {
+      iTime: gl.getUniformLocation(program, "iTime"),
+      iResolution: gl.getUniformLocation(program, "iResolution"),
+      rayPos: gl.getUniformLocation(program, "rayPos"),
+      rayDir: gl.getUniformLocation(program, "rayDir"),
+      raysColor: gl.getUniformLocation(program, "raysColor"),
+      raysSpeed: gl.getUniformLocation(program, "raysSpeed"),
+      lightSpread: gl.getUniformLocation(program, "lightSpread"),
+      rayLength: gl.getUniformLocation(program, "rayLength"),
+      pulsating: gl.getUniformLocation(program, "pulsating"),
+      fadeDistance: gl.getUniformLocation(program, "fadeDistance"),
+      saturation: gl.getUniformLocation(program, "saturation"),
+      mousePos: gl.getUniformLocation(program, "mousePos"),
+      mouseInfluence: gl.getUniformLocation(program, "mouseInfluence"),
+      noiseAmount: gl.getUniformLocation(program, "noiseAmount"),
+      distortion: gl.getUniformLocation(program, "distortion"),
+    };
+
+    // Setup canvas
+    const updateSize = () => {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio, 2);
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+
+    // Mouse tracking
+    const handleMouseMove = (e) => {
+      if (!followMouse) return;
+      const rect = canvas.getBoundingClientRect();
+      mouseRef.current = {
+        x: (e.clientX - rect.left) / rect.width,
+        y: (e.clientY - rect.top) / rect.height,
+      };
+    };
+
+    canvas.addEventListener("mousemove", handleMouseMove);
+
+    // Animation loop
+    let startTime = Date.now();
+    const render = () => {
+      const time = (Date.now() - startTime) / 1000;
+
+      gl.useProgram(program);
       gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-          -1, -1, 3, -1, -1, 3
-      ]), gl.STATIC_DRAW);
+      gl.enableVertexAttribArray(positionLocation);
+      gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
 
-      // Get locations
-      const positionLocation = gl.getAttribLocation(program, 'position');
-      const uniformLocations = {
-          iTime: gl.getUniformLocation(program, 'iTime'),
-          iResolution: gl.getUniformLocation(program, 'iResolution'),
-          rayPos: gl.getUniformLocation(program, 'rayPos'),
-          rayDir: gl.getUniformLocation(program, 'rayDir'),
-          raysColor: gl.getUniformLocation(program, 'raysColor'),
-          raysSpeed: gl.getUniformLocation(program, 'raysSpeed'),
-          lightSpread: gl.getUniformLocation(program, 'lightSpread'),
-          rayLength: gl.getUniformLocation(program, 'rayLength'),
-          pulsating: gl.getUniformLocation(program, 'pulsating'),
-          fadeDistance: gl.getUniformLocation(program, 'fadeDistance'),
-          saturation: gl.getUniformLocation(program, 'saturation'),
-          mousePos: gl.getUniformLocation(program, 'mousePos'),
-          mouseInfluence: gl.getUniformLocation(program, 'mouseInfluence'),
-          noiseAmount: gl.getUniformLocation(program, 'noiseAmount'),
-          distortion: gl.getUniformLocation(program, 'distortion')
-      };
+      // Update uniforms
+      const { anchor, dir } = getAnchorAndDir(
+        raysOrigin,
+        canvas.width,
+        canvas.height
+      );
+      const color = hexToRgb(raysColor);
 
-      // Setup canvas
-      const updateSize = () => {
-          const rect = canvas.getBoundingClientRect();
-          const dpr = Math.min(window.devicePixelRatio, 2);
-          canvas.width = rect.width * dpr;
-          canvas.height = rect.height * dpr;
-          gl.viewport(0, 0, canvas.width, canvas.height);
-      };
+      gl.uniform1f(uniformLocations.iTime, time);
+      gl.uniform2f(uniformLocations.iResolution, canvas.width, canvas.height);
+      gl.uniform2f(uniformLocations.rayPos, anchor[0], anchor[1]);
+      gl.uniform2f(uniformLocations.rayDir, dir[0], dir[1]);
+      gl.uniform3f(uniformLocations.raysColor, color[0], color[1], color[2]);
+      gl.uniform1f(uniformLocations.raysSpeed, raysSpeed);
+      gl.uniform1f(uniformLocations.lightSpread, lightSpread);
+      gl.uniform1f(uniformLocations.rayLength, rayLength);
+      gl.uniform1f(uniformLocations.pulsating, pulsating ? 1.0 : 0.0);
+      gl.uniform1f(uniformLocations.fadeDistance, fadeDistance);
+      gl.uniform1f(uniformLocations.saturation, saturation);
+      gl.uniform2f(
+        uniformLocations.mousePos,
+        mouseRef.current.x,
+        mouseRef.current.y
+      );
+      gl.uniform1f(uniformLocations.mouseInfluence, mouseInfluence);
+      gl.uniform1f(uniformLocations.noiseAmount, noiseAmount);
+      gl.uniform1f(uniformLocations.distortion, distortion);
 
-      updateSize();
-      window.addEventListener('resize', updateSize);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
 
-      // Mouse tracking
-      const handleMouseMove = (e) => {
-          if (!followMouse) return;
-          const rect = canvas.getBoundingClientRect();
-          mouseRef.current = {
-              x: (e.clientX - rect.left) / rect.width,
-              y: (e.clientY - rect.top) / rect.height
-          };
-      };
+      animationRef.current = requestAnimationFrame(render);
+    };
 
-      canvas.addEventListener('mousemove', handleMouseMove);
+    render();
 
-      // Animation loop
-      let startTime = Date.now();
-      const render = () => {
-          const time = (Date.now() - startTime) / 1000;
-          
-          gl.useProgram(program);
-          gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-          gl.enableVertexAttribArray(positionLocation);
-          gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+    // Cleanup
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      window.removeEventListener("resize", updateSize);
+      canvas.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [
+    raysOrigin,
+    raysColor,
+    raysSpeed,
+    lightSpread,
+    rayLength,
+    pulsating,
+    fadeDistance,
+    saturation,
+    followMouse,
+    mouseInfluence,
+    noiseAmount,
+    distortion,
+  ]);
 
-          // Update uniforms
-          const { anchor, dir } = getAnchorAndDir(raysOrigin, canvas.width, canvas.height);
-          const color = hexToRgb(raysColor);
-
-          gl.uniform1f(uniformLocations.iTime, time);
-          gl.uniform2f(uniformLocations.iResolution, canvas.width, canvas.height);
-          gl.uniform2f(uniformLocations.rayPos, anchor[0], anchor[1]);
-          gl.uniform2f(uniformLocations.rayDir, dir[0], dir[1]);
-          gl.uniform3f(uniformLocations.raysColor, color[0], color[1], color[2]);
-          gl.uniform1f(uniformLocations.raysSpeed, raysSpeed);
-          gl.uniform1f(uniformLocations.lightSpread, lightSpread);
-          gl.uniform1f(uniformLocations.rayLength, rayLength);
-          gl.uniform1f(uniformLocations.pulsating, pulsating ? 1.0 : 0.0);
-          gl.uniform1f(uniformLocations.fadeDistance, fadeDistance);
-          gl.uniform1f(uniformLocations.saturation, saturation);
-          gl.uniform2f(uniformLocations.mousePos, mouseRef.current.x, mouseRef.current.y);
-          gl.uniform1f(uniformLocations.mouseInfluence, mouseInfluence);
-          gl.uniform1f(uniformLocations.noiseAmount, noiseAmount);
-          gl.uniform1f(uniformLocations.distortion, distortion);
-
-          gl.clear(gl.COLOR_BUFFER_BIT);
-          gl.drawArrays(gl.TRIANGLES, 0, 3);
-
-          animationRef.current = requestAnimationFrame(render);
-      };
-
-      render();
-
-      // Cleanup
-      return () => {
-          if (animationRef.current) {
-              cancelAnimationFrame(animationRef.current);
-          }
-          window.removeEventListener('resize', updateSize);
-          canvas.removeEventListener('mousemove', handleMouseMove);
-      };
-  }, [raysOrigin, raysColor, raysSpeed, lightSpread, rayLength, pulsating, fadeDistance, saturation, followMouse, mouseInfluence, noiseAmount, distortion]);
-
-  return React.createElement('canvas', {
-      ref: canvasRef,
-      style: { width: '100%', height: '100%' }
+  return React.createElement("canvas", {
+    ref: canvasRef,
+    style: { width: "100%", height: "100%" },
   });
 }
 
 // Initialize components
-const lightRays1Container = document.getElementById('lightRays1');
+const lightRays1Container = document.getElementById("lightRays1");
 
 let lightRays1Props = {
   raysOrigin: "top-center",
-  raysColor: "#FFD373",
+  raysColor: "#FFFFE7",
   raysSpeed: 1.5,
   lightSpread: 0.8,
   rayLength: 1.2,
   followMouse: true,
   mouseInfluence: 0.8,
   noiseAmount: 0.1,
-  distortion: 0.05
+  distortion: 0.05,
 };
 
 const renderLightRays1 = () => {
-  ReactDOM.render(React.createElement(LightRays, lightRays1Props), lightRays1Container);
+  ReactDOM.render(
+    React.createElement(LightRays, lightRays1Props),
+    lightRays1Container
+  );
 };
 
 // Initial render
 renderLightRays1();
 
-// Controls
+// Controls (optional UI). If controls are missing, run without them.
 const controls = {
-  origin: document.getElementById('origin'),
-  color: document.getElementById('color'),
-  speed: document.getElementById('speed'),
-  spread: document.getElementById('spread'),
-  length: document.getElementById('length'),
-  pulsating: document.getElementById('pulsating'),
-  followMouse: document.getElementById('followMouse'),
-  speedValue: document.getElementById('speedValue'),
-  spreadValue: document.getElementById('spreadValue'),
-  lengthValue: document.getElementById('lengthValue')
+  origin: document.getElementById("origin"),
+  color: document.getElementById("color"),
+  speed: document.getElementById("speed"),
+  spread: document.getElementById("spread"),
+  length: document.getElementById("length"),
+  pulsating: document.getElementById("pulsating"),
+  followMouse: document.getElementById("followMouse"),
+  speedValue: document.getElementById("speedValue"),
+  spreadValue: document.getElementById("spreadValue"),
+  lengthValue: document.getElementById("lengthValue"),
 };
 
-// Event listeners
-controls.origin.addEventListener('change', (e) => {
-  lightRays1Props.raysOrigin = e.target.value;
-  renderLightRays1();
-});
+const allControlsPresent =
+  controls.origin &&
+  controls.color &&
+  controls.speed &&
+  controls.spread &&
+  controls.length &&
+  controls.pulsating &&
+  controls.followMouse &&
+  controls.speedValue &&
+  controls.spreadValue &&
+  controls.lengthValue;
 
-controls.color.addEventListener('change', (e) => {
-  lightRays1Props.raysColor = e.target.value;
-  renderLightRays1();
-});
+if (allControlsPresent) {
+  // Event listeners
+  controls.origin.addEventListener("change", (e) => {
+    lightRays1Props.raysOrigin = e.target.value;
+    renderLightRays1();
+  });
 
-controls.speed.addEventListener('input', (e) => {
-  const value = parseFloat(e.target.value);
-  lightRays1Props.raysSpeed = value;
-  controls.speedValue.textContent = value;
-  renderLightRays1();
-});
+  controls.color.addEventListener("change", (e) => {
+    lightRays1Props.raysColor = e.target.value;
+    renderLightRays1();
+  });
 
-controls.spread.addEventListener('input', (e) => {
-  const value = parseFloat(e.target.value);
-  lightRays1Props.lightSpread = value;
-  controls.spreadValue.textContent = value;
-  renderLightRays1();
-});
+  controls.speed.addEventListener("input", (e) => {
+    const value = parseFloat(e.target.value);
+    lightRays1Props.raysSpeed = value;
+    controls.speedValue.textContent = value;
+    renderLightRays1();
+  });
 
-controls.length.addEventListener('input', (e) => {
-  const value = parseFloat(e.target.value);
-  lightRays1Props.rayLength = value;
-  controls.lengthValue.textContent = value;
-  renderLightRays1();
-});
+  controls.spread.addEventListener("input", (e) => {
+    const value = parseFloat(e.target.value);
+    lightRays1Props.lightSpread = value;
+    controls.spreadValue.textContent = value;
+    renderLightRays1();
+  });
 
-controls.pulsating.addEventListener('change', (e) => {
-  lightRays1Props.pulsating = e.target.checked;
-  renderLightRays1();
-});
+  controls.length.addEventListener("input", (e) => {
+    const value = parseFloat(e.target.value);
+    lightRays1Props.rayLength = value;
+    controls.lengthValue.textContent = value;
+    renderLightRays1();
+  });
 
-controls.followMouse.addEventListener('change', (e) => {
-  lightRays1Props.followMouse = e.target.checked;
-  renderLightRays1();
-});
+  controls.pulsating.addEventListener("change", (e) => {
+    lightRays1Props.pulsating = e.target.checked;
+    renderLightRays1();
+  });
+
+  controls.followMouse.addEventListener("change", (e) => {
+    lightRays1Props.followMouse = e.target.checked;
+    renderLightRays1();
+  });
+} else {
+  if (typeof console !== "undefined" && console.warn) {
+    console.warn(
+      "LightRays controls not found on page. Running without UI controls."
+    );
+  }
+}

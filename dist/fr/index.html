@@ -1,0 +1,844 @@
+<!DOCTYPE html><html lang="fr" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWRO — Organisation mondiale des religions unies</title>
+
+    <!-- React and ReactDOM -->
+    <script crossorigin="" src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin="" src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="alternate" hreflang="en" href="../en/"><link rel="alternate" hreflang="es" href="../es/"><link rel="alternate" hreflang="fr" href="../fr/"><link rel="alternate" hreflang="de" href="../de/"><link rel="alternate" hreflang="ar" href="../ar/"><link rel="alternate" hreflang="zh" href="../zh/"><link rel="alternate" hreflang="ru" href="../ru/"><link rel="alternate" hreflang="pt" href="../pt/"><link rel="alternate" hreflang="hi" href="../hi/"><link rel="alternate" hreflang="ja" href="../ja/"><link rel="alternate" hreflang="x-default" href="../en/"></head>
+  <body>
+    <header>
+      <div class="header-actions">
+        <button id="locale-button" class="locale-button" aria-haspopup="menu" aria-expanded="false" aria-controls="locale-menu" title="Change language">
+          🌐
+        </button>
+        <nav id="nav-icon">
+          <span></span>
+          <span></span>
+        </nav>
+      </div>
+      <nav id="locale-menu" class="locale-menu" role="menu" aria-labelledby="locale-button">
+        <a href="/en/" role="menuitem" lang="en">English</a>
+        <a href="/fr/" role="menuitem" lang="fr">Français</a>
+        <a href="/de/" role="menuitem" lang="de">Deutsch</a>
+        <a href="/es/" role="menuitem" lang="es">Español</a>
+        <a href="/ar/" role="menuitem" lang="ar" dir="rtl">العربية</a>
+        <a href="/zh/" role="menuitem" lang="zh">中文</a>
+        <a href="/ru/" role="menuitem" lang="ru">Русский</a>
+        <a href="/pt/" role="menuitem" lang="pt">Português</a>
+        <a href="/hi/" role="menuitem" lang="hi">हिन्दी</a>
+        <a href="/ja/" role="menuitem" lang="ja">日本語</a>
+      </nav>
+      <img src="../images/Isolation_Mode.svg" alt="ORGANISATION MONDIALE DES RELIGIONS UNIES" class="org-name" data-i18n-attr="alt:org.logoAlt">
+      <div id="mySidenav" class="sidenav">
+        <a href="#who-we-are" data-i18n="nav.whoWeAre">Qui sommes-nous</a>
+        <a href="#our-causes" data-i18n="nav.ourCauses">Nos causes</a>
+        <a href="#our-causes" style="font-size: 20px" data-i18n="nav.divineDigital">Divin numérique</a>
+        <a href="#eternal-map" style="font-size: 20px" data-i18n="nav.eternalMap">Carte éternelle</a>
+        <a href="#faith-of-harmony" style="font-size: 20px" data-i18n="nav.faithOfHarmony">Foi de l’harmonie</a>
+        <a href="#divine-donor-status" style="font-size: 20px" data-i18n="nav.divineDonorStatus">Statut de donateur divin</a>
+        <a href="#presidents-word" data-i18n="nav.presidentsMessage">Message du président</a>
+        <a href="#donation-form" data-i18n="nav.donations">Dons</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title" data-i18n="hero.title">Là où la technologie rencontre la foi</h1>
+          <p class="hero-text" data-i18n="hero.subtitle">La première fondation caritative de technologie et de design soutenant 16 religions dans le monde</p>
+          <button class="donate-btn" type="button" onclick="document.getElementById('donation-form').scrollIntoView({behavior: 'smooth'});" data-i18n="hero.cta">Faire un don</button>
+
+          <!-- <div class="big-logo-container">
+            <img
+              src="svg/UWRO short.svg"
+              class="big-logo"
+              alt="UWRO Logo Background"
+            />
+          </div> -->
+        </div>
+        <div id="lightRays1" class="light-rays"></div>
+      </section>
+
+      <div class="big-logo-container-top">
+        <img src="../svg/UWRO short.svg" class="big-logo-top" alt="UWRO Logo">
+      </div>
+
+      <div class="opacity-container">
+        <section class="partners-logos" aria-label="Nos partenaires" data-i18n-attr="aria-label:partners.aria">
+          <div class="logo-container logo-scroll">
+            <div class="religion-icon">
+              <img src="../Religion-icons/Armenian Apostolic Church.svg">
+              <p class="back-text" data-i18n="religions.armenianApostolicChurch">Église apostolique arménienne</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Baha╠ü╩╝i╠ü Faith.svg">
+              <p class="back-text" data-i18n="religions.bahaiFaith">Foi bahá'íe</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Buddism.svg">
+              <p class="back-text" data-i18n="religions.buddhism">Bouddhisme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Catholic Christianity.svg">
+              <p class="back-text" data-i18n="religions.catholicChristianity">Christianisme catholique</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Confucianism.svg">
+              <p class="back-text" data-i18n="religions.confucianism">Confucianisme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Hinduism.svg">
+              <p class="back-text" data-i18n="religions.hinduism">Hindouisme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Islam.svg">
+              <p class="back-text" data-i18n="religions.islam">Islam</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Jainism.svg">
+              <p class="back-text" data-i18n="religions.jainism">Jaïnisme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Judaism.svg">
+              <p class="back-text" data-i18n="religions.judaism">Judaïsme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Mormonism.svg">
+              <p class="back-text" data-i18n="religions.mormonism">Mormonisme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Orthodox Christianity.svg">
+              <p class="back-text" data-i18n="religions.orthodoxChristianity">Christianisme orthodoxe</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Protestantism.svg">
+              <p class="back-text" data-i18n="religions.protestantism">Protestantisme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Shinto.svg">
+              <p class="back-text" data-i18n="religions.shinto">Shintoïsme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Sikhism.svg">
+              <p class="back-text" data-i18n="religions.sikhism">Sikhisme</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Yoruba.svg">
+              <p class="back-text" data-i18n="religions.yoruba">Yoruba</p>
+            </div>
+
+            <div class="religion-icon">
+              <img src="../Religion-icons/Zoroastrianism.svg">
+              <p class="back-text" data-i18n="religions.zoroastrianism">Zoroastrisme</p>
+            </div>
+
+            <!-- Duplicate for seamless loop -->
+            <div aria-hidden="true" style="display: contents">
+              <div class="religion-icon">
+                <img src="../Religion-icons/Armenian Apostolic Church.svg">
+                <p class="back-text" data-i18n="religions.armenianApostolicChurch">Église apostolique arménienne</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Baha╠ü╩╝i╠ü Faith.svg">
+                <p class="back-text" data-i18n="religions.bahaiFaith">Foi bahá'íe</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Buddism.svg">
+                <p class="back-text" data-i18n="religions.buddhism">Bouddhisme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Catholic Christianity.svg">
+                <p class="back-text" data-i18n="religions.catholicChristianity">Christianisme catholique</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Confucianism.svg">
+                <p class="back-text" data-i18n="religions.confucianism">Confucianisme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Hinduism.svg">
+                <p class="back-text" data-i18n="religions.hinduism">Hindouisme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Islam.svg">
+                <p class="back-text" data-i18n="religions.islam">Islam</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Jainism.svg">
+                <p class="back-text" data-i18n="religions.jainism">Jaïnisme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Judaism.svg">
+                <p class="back-text" data-i18n="religions.judaism">Judaïsme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Mormonism.svg">
+                <p class="back-text" data-i18n="religions.mormonism">Mormonisme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Orthodox Christianity.svg">
+                <p class="back-text" data-i18n="religions.orthodoxChristianity">Christianisme orthodoxe</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Protestantism.svg">
+                <p class="back-text" data-i18n="religions.protestantism">Protestantisme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Shinto.svg">
+                <p class="back-text" data-i18n="religions.shinto">Shintoïsme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Sikhism.svg">
+                <p class="back-text" data-i18n="religions.sikhism">Sikhisme</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Yoruba.svg">
+                <p class="back-text" data-i18n="religions.yoruba">Yoruba</p>
+              </div>
+
+              <div class="religion-icon">
+                <img src="../Religion-icons/Zoroastrianism.svg">
+                <p class="back-text" data-i18n="religions.zoroastrianism">Zoroastrisme</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="h3" id="who-we-are" data-i18n="about.title">Qui sommes-nous</h2>
+          <p class="mission-text" data-i18n="about.mission">une alliance mondiale engagée à promouvoir la paix et la compréhension. Nous croyons que la foi doit unir, pas diviser, et nous agissons par le dialogue, l'éducation et l'action commune.</p>
+        </section>
+
+        <section class="updates-section">
+          <h2 class="h3" style="margin-bottom: 32px" data-i18n="updates.title">Suivez nos dernières actualités</h2>
+          <div class="subscription-form">
+            <form>
+              <input type="email" placeholder="E-mail" required="" aria-label="Adresse e-mail" data-i18n-attr="placeholder:updates.emailPh;aria-label:updates.emailAria">
+              <input type="text" placeholder="Nom" required="" aria-label="Nom complet" data-i18n-attr="placeholder:updates.namePh;aria-label:updates.nameAria">
+              <button type="submit" class="button-amen" data-i18n="updates.cta">S'abonner et Amen</button>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <section class="divine-digital-section" id="our-causes">
+        <div class="dd-container">
+          <h2 class="dd-header" data-i18n="dd.title">Divin numérique</h2>
+
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-1" role="img" aria-label="Visualisation de l'écosystème numérique pour les organisations religieuses" data-i18n-attr="aria-label:dd.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="dd.quote">Le pont numérique vers l'éternité spirituelle</h3>
+                <p class="dd-description" data-i18n="dd.description">Nous rapprochons la foi, plus moderne et plus accessible, en créant un écosystème numérique pour les temples, mosquées, églises, centres spirituels et organisations religieuses du monde entier — à travers plus de 14 religions.</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service1">Création de sites modernes, élégants et informatifs et de l'identité de marque pour les organisations religieuses</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service2">Développement d'applications mobiles</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="dd.service3">Accompagnement des organisations religieuses dans la gestion des réseaux sociaux</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="eternal-map">
+        <div class="dd-container is-white">
+          <h2 class="dd-header" data-i18n="em.title">Carte éternelle</h2>
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-2" role="img" aria-label="Visualisation de la technologie de navigation des cimetières" data-i18n-attr="aria-label:em.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="em.quote">Navigation de la mémoire</h3>
+                <p class="dd-description" data-i18n="em.description">Nous créons une technologie qui aide les personnes à retrouver facilement ceux qui ne sont plus parmi nous et à témoigner de l'attention à ceux qui restent à jamais dans leurs cœurs, quelle que soit la distance.</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="em.service1">Systèmes de navigation des cimetières permettant de localiser les proches via une application ou un affichage</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="em.service2">Livraison de fleurs et entretien des tombes désormais plus accessibles, où que nous soyons</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="faith-of-harmony">
+        <div class="dd-container">
+          <h2 class="dd-header" data-i18n="foh.title">Foi de l'harmonie</h2>
+          <div class="dd-content">
+            <div class="dd-image-placeholder img-3" role="img" aria-label="Visualisation d'une collaboration musicale interreligieuse" data-i18n-attr="aria-label:foh.imageAria"></div>
+
+            <div class="dd-text-content">
+              <div class="dd-quote-section">
+                <h3 class="dd-quote" data-i18n="foh.quote">Une musique qui unit les cieux</h3>
+                <p class="dd-description" data-i18n="foh.description">Nous créons un nouveau format de dialogue interreligieux — par la musique, l'émotion et la créativité.</p>
+              </div>
+
+              <div class="dd-services">
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service1">Plateforme culturelle où chaque foi peut s'exprimer par la musique</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service2">Label de musique spirituelle international UWRO Music</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service3">Lancement d'une onde FM à travers le monde</p>
+                </div>
+
+                <div class="dd-service-item">
+                  <div class="dd-service-icon" aria-hidden="true">
+                    <img src="../svg/Check icon.svg" alt="" width="20" height="20">
+                  </div>
+                  <p class="dd-service-text" data-i18n="foh.service4">Organisation de festivals de la foi réunissant des représentants de différentes religions et traditions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="divine-digital-section" id="divine-donor-status">
+        <div class="dd-container is-white">
+          <h2 class="dd-header" data-i18n="dds.title">Statut de donateur divin</h2>
+          <div class="dd-content">
+            <!-- Cards using unified classes -->
+            <div class="cards-grid">
+              <!-- Card 1 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🕯️</div>
+                    <p class="card-title" data-i18n-html="dds.card1.frontTitle">
+                      LIGHT BEARER <br>
+                      $ 1 - $ 99
+                    </p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card1.backTitle">
+                      LIGHT BEARER
+                    </h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card1.blessingsTitle">Your blessings include</b>
+                    </p>
+                    <p class="back-text" data-i18n-html="dds.card1.blessing1">
+                      A heartfelt thank-you email <br>
+                      Your name proudly displayed on the UWRO Gratitude Wall
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🛡️</div>
+                    <p class="card-title" data-i18n-html="dds.card2.frontTitle">
+                      FLAME KEEPER <br>
+                      $ 100 - $ 999
+                    </p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card2.backTitle">
+                      FLAME KEEPER
+                    </h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card2.blessingsTitle">Your blessings include</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card2.blessing1">All Light Bearer Blessings</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card2.blessing2">
+                      A personalized digital certificate
+                    </p>
+                    <p class="back-text" data-i18n="dds.card2.blessing3">
+                      3-month access to the Praymory App
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🕊</div>
+                    <p class="card-title" data-i18n-html="dds.card3.frontTitle">
+                      PILLAR OF HARMONY <br>
+                      $ 1k - $ 10k
+                    </p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card3.backTitle">
+                      PILLAR OF HARMONY
+                    </h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card3.blessingsTitle">Your blessings include</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card3.blessing1">All Flame Keeper Blessings</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card3.blessing2">
+                      Limited-edition UWRO cap
+                    </p>
+                    <p class="back-text" data-i18n="dds.card3.blessing3">
+                      12-month premium access to Praymory App
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🛕</div>
+                    <p class="card-title" data-i18n-html="dds.card4.frontTitle">
+                      ARCHITECT OF UNITY <br>
+                      $ 10k - $ 100k
+                    </p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card4.backTitle">
+                      ARCHITECT OF UNITY
+                    </h3>
+                    <!--<p class="back-text"><b>Your blessings include</b></p>-->
+                    <p class="back-text">
+                      <i data-i18n="dds.card4.blessing1">All Pillar of Harmony Blessings</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card4.blessing2">
+                      Your Name Etched On A Dedicated
+                    </p>
+                    <p class="back-text" data-i18n="dds.card4.blessing3">
+                      Section Of The UWRO Site
+                    </p>
+                    <p class="back-text" data-i18n="dds.card4.blessing4">
+                      A Personal Video Thank-you From The UWRO Team
+                    </p>
+                    <p class="back-text" data-i18n="dds.card4.blessing5">
+                      3 Years Of Praymory Premium For 3 Devices
+                    </p>
+                    <p class="back-text" data-i18n="dds.card4.blessing6">
+                      A Physical Memorial Plaque
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">🌳</div>
+                    <p class="card-title" data-i18n-html="dds.card5.frontTitle">
+                      GUARDIAN OF ETERNITY <br>
+                      $ 100k - $ 1M
+                    </p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card5.backTitle">
+                      GUARDIAN OF ETERNITY
+                    </h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card5.blessingsTitle">Your blessings include</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card5.blessing1">All Architect of Unity Blessings</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card5.blessing2">
+                      A Dedicated Tree Or Star In The "Digital Garden of Memory"
+                    </p>
+                    <p class="back-text" data-i18n="dds.card5.blessing3">
+                      VIP Invites To UWRO's Offline Events/Festivals
+                    </p>
+                    <p class="back-text" data-i18n="dds.card5.blessing4">
+                      The Opportunity To Establish A Personal Grant
+                    </p>
+                    <p class="back-text" data-i18n="dds.card5.blessing5">
+                      5 Years Of Praymory Access For 5 Devices
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="card-box">
+                <div class="dd-card">
+                  <div class="card-side card-front">
+                    <div class="card-emoji">👑</div>
+                    <p class="card-title" data-i18n-html="dds.card6.frontTitle">
+                      ETERNAL FOUNDER <br>
+                      $ 1M+
+                    </p>
+                  </div>
+                  <div class="card-side card-back">
+                    <h3 class="card-title" data-i18n="dds.card6.backTitle">
+                      ETERNAL FOUNDER
+                    </h3>
+                    <p class="back-text">
+                      <b data-i18n="dds.card6.blessing1">All Guardian of Eternity Blessings</b>
+                    </p>
+                    <p class="back-text">
+                      <i data-i18n="dds.card6.blessing2">All Architect Of Unity Blessings</i>
+                    </p>
+                    <p class="back-text" data-i18n="dds.card6.blessing3">
+                      Your Name Engraved on the Digital (and Possibly Physical)
+                      Memorial
+                    </p>
+                    <p class="back-text" data-i18n="dds.card6.blessing4">
+                      The Right to Establish a UWRO Project or Division
+                    </p>
+                    <p class="back-text" data-i18n="dds.card6.blessing5">
+                      Influence in Shaping UWRO's Strategic Future
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="dd-text-content" id="divine-donor-status">
+              <div class="dd-quote-section">
+                <p class="dd-quote" data-i18n="dds.introTitle">Débloquez votre rang divin grâce au don</p>
+                <p class="dd-description" data-i18n="dds.introDesc1">À l'UWRO, votre don n'est pas seulement un soutien — c'est un acte sacré qui contribue à l'unité entre les confessions, crée des sanctuaires numériques et éclaire la voie de la croissance spirituelle dans le monde.</p>
+                <p class="dd-description" data-i18n="dds.introDesc2">En donnant, vous progressez dans nos rangs de donateurs divins — chacun marquant votre générosité et votre impact. Chaque rang apporte ses bénédictions, sa reconnaissance et ses récompenses spirituelles.</p>
+              </div>
+
+              <div class="dd-quote-section">
+                <div class="dd-quote" data-i18n="dds.howTitle">Voici comment cela fonctionne…</div>
+                <p class="dd-description" data-i18n="dds.howDesc1">Plus vous donnez, plus vous rayonnez. De 10 $ à 1 000 000 $ et plus, chaque don débloque un nouveau statut — du modeste Porteur de lumière au légendaire Fondateur éternel.</p>
+                <p class="dd-description" data-i18n="dds.howDesc2">En chemin, vous recevrez des avantages comme l'accès exclusif à l'application Praymory, des mémoriaux numériques, des invitations VIP et une gratitude éternelle (littéralement).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="divine-digital-section">
+                <div class="dd-container is-white">
+                    <h2 class="dd-header">What We Did</h2>
+                    <div class="dd-content">
+                        <div class="dd-image-placeholder img-4" role="img" aria-label="Interfaith musical collaboration visualization">
+                        </div>
+                        
+                        <div class="dd-text-content">
+                            <div class="dd-quote-section">
+                                <h3 class="dd-quote">Text placeholder</h3>
+                                <p class="dd-description">Text placeholder-Text placeholder-Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                            </div>
+                            
+                            <div class="dd-services">
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+                                
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+
+                                <div class="dd-service-item">
+                                    <div class="dd-service-icon" aria-hidden="true">
+                                        <img src="svg/Check icon.svg" alt="" width="20" height="20">
+                                    </div>
+                                    <p class="dd-service-text">Text placeholder-Text placeholder-Text placeholder-Text placeholder</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+      <section class="quote-section" id="presidents-word">
+        <div class="hero-content">
+          <blockquote class="quote-title" data-i18n="pres.quote1">Nous apportons une contribution significative au monde religieux à l'ère de la numérisation mondiale. Dorénavant, la foi et la religion incarneront les normes les plus élevées de technologie et d'art.</blockquote>
+          <blockquote class="quote-title" data-i18n="pres.quote2">Nous ne changeons pas la foi — nous la renforçons et la rendons accessible à tous.</blockquote>
+          <p class="back-text"><b data-i18n="pres.name">Naïl Saïfutdinov</b></p>
+          <p class="back-text">
+            <i data-i18n="pres.title">Président de l'UWRO</i>
+          </p>
+        </div>
+        <div id="orb1" class="orb-container"></div>
+      </section>
+
+      <!-- Donate Section -->
+
+      <section class="change-lives-give" id="donation-form">
+        <!-- Header Section -->
+        <div class="header">
+          <h2 class="h3" data-i18n="donate.title">Changez des vies. Donnez avec foi.</h2>
+          <p class="hero-text">
+            <span data-i18n="donate.disclaimer">NOUS SOMMES ENGAGÉS POUR UNE TRANSPARENCE TOTALE : 90 % DES FONDS SOUTIENNENT DIRECTEMENT NOS CAUSES, 5 % SONT ALLOUÉS À L'ADMINISTRATION ET 5 % À LA SENSIBILISATION.</span>
+          </p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-container">
+          <div class="form-grid">
+            <!-- Email & Name Inputs -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.enterTitle">Entrez votre e-mail et votre nom</p>
+              <input type="email" placeholder="E-mail" required="" aria-label="Adresse e-mail" data-i18n-attr="placeholder:donate.emailPh;aria-label:donate.emailAria">
+              <input type="text" placeholder="Nom" required="" aria-label="Nom complet" data-i18n-attr="placeholder:donate.namePh;aria-label:donate.nameAria">
+            </div>
+
+            <!-- Frequency Selection -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.frequencyTitle">Sélectionnez la fréquence</p>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="frequency" value="monthly">
+                  <span class="frequency-button" data-i18n="donate.monthly">Mensuel</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="frequency" value="onetime">
+                  <span class="frequency-button" data-i18n="donate.oneTime">Unique</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Card Section -->
+            <div class="carousel-section">
+              <div id="carousel-root"></div>
+            </div>
+
+            <!-- Amount Selection -->
+            <div class="input-group">
+              <p class="enter-your-email" data-i18n="donate.amountTitle">Sélectionnez le montant</p>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$5">
+                  <span class="frequency-button">$5</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$25">
+                  <span class="frequency-button">$25</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$50">
+                  <span class="frequency-button">$50</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$100">
+                  <span class="frequency-button">$100</span>
+                </label>
+              </div>
+              <div class="frequency-radio-group">
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$300">
+                  <span class="frequency-button">$300</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$500">
+                  <span class="frequency-button">$500</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$1000">
+                  <span class="frequency-button">$1000</span>
+                </label>
+                <label class="frequency-radio">
+                  <input type="radio" name="amount" value="$5000">
+                  <span class="frequency-button">$5000</span>
+                </label>
+              </div>
+              <label class="frequency-radio">
+                <input type="radio" name="amount" value="" id="customAmountRadio" onchange="this.nextElementSibling.focus()">
+                <input type="text" inputmode="numeric" placeholder="Saisissez votre montant" aria-label="Saisissez votre montant" id="customAmountInput" oninput="handleCustomAmount(this)" onclick="this.form.amount.value=''; document.getElementById('customAmountRadio').checked = true;" data-i18n-attr="placeholder:donate.customAmountPh;aria-label:donate.customAmountAria">
+              </label>
+            </div>
+          </div>
+          <div class="button-amen" data-i18n="donate.blessingCta">Que Dieu vous bénisse !</div>
+        </div>
+      </section>
+
+      <section class="running-text-container" aria-label="Promotion de l'application Praymory" data-i18n-attr="aria-label:running.aria">
+        <div class="running-track">
+          <div class="running-text">
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+          </div>
+          <div class="running-text" aria-hidden="true">
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+            <span data-i18n="running.praymory">Nous prions avec Praymory</span>
+            <span class="logo-placeholder"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacts">
+        <div class="cont-sec-full">
+          <h2 class="sign-up-for-our" data-i18n-html="contacts.titleDesktop">Inscrivez-vous à notre newsletter<br>pour recevoir les actualités de l'UWRO</h2>
+          <form class="newsletter-form">
+            <input type="text" placeholder="E-mail" required="" aria-label="E-mail" data-i18n-attr="placeholder:contacts.emailPh;aria-label:contacts.emailAria">
+            <button type="submit" class="button-amen" data-i18n="contacts.subscribeCta">S'abonner</button>
+          </form>
+        </div>
+
+        <div class="social-section-mob">
+          <h3 class="text-wrapper-3" data-i18n="contacts.followUs">Suivez-nous</h3>
+          <nav class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link">INSTAGRAM</a>
+            <a href="#" class="social-link">LINKEDIN</a>
+            <a href="#" class="social-link">X</a>
+          </nav>
+          <a href="#" class="privacy-link" data-i18n="contacts.privacyPolicy">POLITIQUE DE CONFIDENTIALITÉ</a>
+        </div>
+
+        <div class="cont-sec-mob">
+          <h2 class="sign-up-for-our" data-i18n-html="contacts.titleMobile">Inscrivez-vous à notre newsletter<br>pour recevoir les actualités de l'UWRO</h2>
+          <form>
+            <input type="email" placeholder="E-mail" required="" aria-label="E-mail" data-i18n-attr="placeholder:contacts.emailPh;aria-label:contacts.emailAria">
+            <input type="text" placeholder="Nom" required="" aria-label="Nom complet" data-i18n-attr="placeholder:contacts.namePh;aria-label:contacts.nameAria">
+            <button type="submit" class="button-amen" data-i18n="contacts.subscribeNow">S'abonner maintenant</button>
+          </form>
+        </div>
+
+        <div class="social-section">
+          <h3 class="text-wrapper-3">Follow Us</h3>
+          <nav class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link">INSTAGRAM</a>
+            <a href="#" class="social-link">LINKEDIN</a>
+            <a href="#" class="social-link">X</a>
+          </nav>
+          <a href="#" class="privacy-link">PRIVACY POLICY</a>
+        </div>
+
+        <div class="footer">
+          <img src="../svg/UWRO Full.svg" class="footer-logo full" alt="Logo complet de l'Organisation mondiale des religions unies" data-i18n-attr="alt:org.footerFullLogoAlt">
+          <img src="../svg/Logo-short-mob.svg" class="footer-logo short" alt="Logo court de l'Organisation mondiale des religions unies" data-i18n-attr="alt:org.footerShortLogoAlt">
+        </div>
+      </section>
+    </main>
+
+    <!-- <script src="js/big-logo-change.js"></script> -->
+    <!-- <script src="js/vh-fix.js"></script> -->
+    <script src="../js/Cursor.js"></script>
+    <script type="text/babel" src="../js/card-carousel.jsx"></script>
+    <script src="../js/custom-amount.js"></script>
+    <script src="../js/menu-new.js"></script>
+    <script type="text/babel" src="../js/LightRays.jsx" defer=""></script>
+    <script type="text/babel" src="../js/Orb.jsx" defer=""></script>
+    <!--<script src="js/org-name-color-change.js"></script>-->
+    <!--<script src="js/stacking-effect.js"></script>-->
+    <script src="../js/locale-menu.js"></script>
+  
+
+</body></html>
